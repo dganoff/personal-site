@@ -17,15 +17,12 @@
 	<link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
-	<header>
-		logo
+	<header role="banner" class="header">
+		<a href="/" class="logo">logo</a>
 		{{> main-nav}}
 	</header>
-	<div class="row">
-		<div class="grid-12 columns">			
-			{{>body}}
-		</div>
-	</div>
+
+	{{>body}}
 
 	<script src="js/app.min.js"></script>
 </body>

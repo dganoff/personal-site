@@ -1,0 +1,39 @@
+.header {
+	position: relative;
+	background: darken($primary-color,15);
+	color: white;
+}
+
+.logo {
+	float: left;
+	position: relative;
+}
+
+.nav-toggle {
+	position: absolute;
+	right: 0;
+	padding: 5px 15px;
+	text-decoration: none;
+	color: white !important;
+	font-size: 2em;
+
+	@media (min-width: $medium-screen) {
+		display: none;
+	}
+}
+
+.main-nav {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		list-style: none;
+
+		a {
+
+		}
+	}
+}

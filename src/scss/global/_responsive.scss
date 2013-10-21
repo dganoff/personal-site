@@ -1,0 +1,12 @@
+// Visibility:
+.hide-small {
+	@media (max-width: $small-screen) {
+		display: none;
+	}
+}
+
+.hide-large {
+	@media (min-width: $large-screen) {
+		display: none;
+	}
+}

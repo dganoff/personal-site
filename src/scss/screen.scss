@@ -17,6 +17,11 @@
 @import "../bower-components/font-awesome/scss/icons";
 
 // Project-specific Files
-@import "global/vars";
-@import "global/grid";
-@import "global/layout";
+@import "global/vars",
+		"global/fonts",
+		"global/responsive",
+		"global/grid",
+		"global/typography",
+		"pages/header",
+		"pages/homepage",
+		"global/layout";

@@ -1,0 +1,29 @@
+.hero {
+	background: lighten($primary-color,10);
+	color: white;
+	font-weight: 100;
+
+	h1 {
+		font-size: 44px;
+		font-weight: 700;
+	}
+
+	.subtitle {
+		margin-top: -1em;
+	}
+}
+
+.social-tile-link {
+	display: block;
+	padding: 1em;
+	background: #eee;
+	border: 1px solid #ccc;
+	text-align: center;
+	text-decoration: none;
+
+	@include transition(all .3s ease-in);
+
+	&:hover {
+		background: #ccc;
+	}
+}
