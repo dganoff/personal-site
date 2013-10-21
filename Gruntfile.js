@@ -12,12 +12,12 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		uglify: {
-			options: {
-		    	banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
-		    },
+			// options: {
+		 //    	banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
+		 //    },
 			dist: {
 				files: {
-					'dist/js/app.min.js': ['src/js/*.js']
+					'src/js/output/app.min.js': [SRC + 'js/*.js']
 				}
 		    }
 		},
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: [SRC + 'js/*.js'],
-				tasks: ['uglify', 'copy']
+				tasks: ['uglify', 'concat']
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
@@ -110,6 +110,17 @@ module.exports = function(grunt) {
 					} 
 				]
 			}
+		},
+
+		concat: {
+			options: {
+				separator: ';',
+				banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
+			},
+			dist: {
+				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/output/app.min.js'],
+				dest: DIST + 'js/app.min.js'
+			}
 		}
 	});
 
@@ -122,8 +133,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('assemble');
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Register Tasks:
 	grunt.registerTask('default', ['assemble']);
-	grunt.registerTask('dev', ['connect', 'watch', 'copy']);
+	grunt.registerTask('dev', ['connect', 'watch']);
 };
