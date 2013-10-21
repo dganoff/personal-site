@@ -130,6 +130,13 @@ module.exports = function(grunt) {
 				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/output/app.min.js'],
 				dest: DIST + 'js/app.min.js'
 			}
+		},
+
+		'gh-pages': {
+			options: {
+				base: 'dist'
+			},
+			src: ['**']
 		}
 	});
 
@@ -143,8 +150,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-gh-pages');
 
 	// Register Tasks:
 	grunt.registerTask('default', ['assemble']);
 	grunt.registerTask('dev', ['connect', 'watch']);
+	grunt.registerTask('pages', ['gh-pages']);
 };
