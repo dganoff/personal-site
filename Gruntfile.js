@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		uglify: {
-			// options: {
-		 //    	banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
-		 //    },
+			options: {
+		    	banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
+		    },
 			dist: {
 				files: {
 					'src/js/output/app.min.js': [SRC + 'js/*.js']
@@ -114,8 +114,7 @@ module.exports = function(grunt) {
 
 		concat: {
 			options: {
-				separator: ';',
-				banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
+				separator: ';'
 			},
 			dist: {
 				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/output/app.min.js'],
