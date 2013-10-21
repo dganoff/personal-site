@@ -20,7 +20,16 @@ footer {
 		}
 
 		&:hover, &:active {
-			color: $link-color;
+			// color: $link-color;
+			opacity: 0.7;
+		}
+
+		.icon-codepen-white {
+			position: relative;
+			top: 3px;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
 		}
 	}
 }

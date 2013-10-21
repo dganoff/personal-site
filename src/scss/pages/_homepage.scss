@@ -10,6 +10,7 @@
 	h1 {
 		font-size: 44px;
 		font-weight: 900;
+		text-shadow: 0px 5px 4px rgba(black,.1);
 
 		@media (max-width: $small-screen) {
 			font-size: 38px;
@@ -63,6 +64,11 @@
 		display: block;
 		font-size: 3em;
 		color: darken($link-color, 10);
-		// @include transition(all .5s $ease-in-out-back);
+	}
+
+	.icon-codepen-black {
+		height: 49px;
+		background-size: 45px;
+		opacity: .6;
 	}
 }

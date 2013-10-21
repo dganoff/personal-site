@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 			options: {
 				flatten: true,
 				// assets: "path/to/assets",
-        		layoutdir: 'src/templates/layouts',
+        		layoutdir: SRC + 'templates/layouts',
 				layout: 'layout.hbs',
 				data: [SRC + "data/*.{json, yml}"],
 				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs'],
@@ -91,27 +91,32 @@ module.exports = function(grunt) {
 			},
 			pages: {
 				files: {
-		        	DIST: ['src/templates/pages/*.hbs']
+		        	DIST: [SRC + 'templates/pages/*.hbs']
 		        }
+			},
+			blog: {
+				options: {
+					layout: 'blog-layout.hbs'
+				},
+				files: {
+					'dist/blog/': [SRC + 'templates/blog/*.hbs']
+				}
 			}
-			// blog: {
-			// 	options: {
-			// 		layout: 'blog-layout.hbs'
-			// 	},
-			// 	src: [SRC + 'templates/blog/*.hbs'],
-			// 	dest: DIST + 'articles/'
-			// }
 		},
 
 		copy: {
-			main: {
+			javascript: {
 				files: [
 					{
 						expand: true,
 						src: [SRC + 'bower-components/jquery/jquery.min.js'],
 						flatten: true,
 						dest: DIST + 'js'
-					},
+					}
+				]
+			},
+			images: {
+				files: [
 					{
 						expand: true,
 						src: [SRC + 'images/*'],
@@ -119,7 +124,18 @@ module.exports = function(grunt) {
 						dest: DIST + 'img'
 					}
 				]
+			},
+			fonts: {
+				files: [
+					{
+						expand: true,
+						src: [SRC + 'bower-components/font-awesome/font/*'],
+						flatten: true,
+						dest: DIST + 'font'
+					}
+				]
 			}
+
 		},
 
 		concat: {
@@ -137,6 +153,12 @@ module.exports = function(grunt) {
 				base: 'dist'
 			},
 			src: ['**']
+		},
+
+		clean: {
+			build: {
+				src: ["src"]
+			}
 		}
 	});
 
@@ -151,6 +173,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-gh-pages');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	// Register Tasks:
 	grunt.registerTask('default', ['assemble']);
