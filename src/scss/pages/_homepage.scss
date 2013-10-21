@@ -6,6 +6,10 @@
 	h1 {
 		font-size: 44px;
 		font-weight: 700;
+
+		@media (max-width: $small-screen) {
+			font-size: 38px;
+		}
 	}
 
 	.subtitle {

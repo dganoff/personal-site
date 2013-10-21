@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		    },
 			dist: {
 				files: {
-					'dist/js/app.min.js': ['src/js/one.js', 'src/js/two.js']
+					'dist/js/app.min.js': ['src/js/*.js']
 				}
 		    }
 		},
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: [SRC + 'js/*.js'],
-				tasks: ['uglify']
+				tasks: ['uglify', 'copy']
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
@@ -97,6 +97,19 @@ module.exports = function(grunt) {
 			// 	src: [SRC + 'templates/blog/*.hbs'],
 			// 	dest: DIST + 'articles/'
 			// }
+		},
+
+		copy: {
+			main: {
+				files: [
+					{
+						expand: true,
+						src: [SRC + 'bower-components/jquery/jquery.min.js'],
+						flatten: true,
+						dest: DIST + 'js'
+					} 
+				]
+			}
 		}
 	});
 
@@ -108,8 +121,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('assemble');
 	grunt.loadNpmTasks('grunt-newer');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Register Tasks:
 	grunt.registerTask('default', ['assemble']);
-	grunt.registerTask('dev', ['connect', 'watch', 'jshint']);
+	grunt.registerTask('dev', ['connect', 'watch', 'copy']);
 };

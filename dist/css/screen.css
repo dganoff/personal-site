@@ -2460,9 +2460,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  position: relative;
-  background: #00434d;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background: rgba(0, 22, 26, 0.75);
   color: white;
+  *zoom: 1;
+}
+.header:before, .header:after {
+  content: " ";
+  display: table;
+}
+.header:after {
+  clear: both;
 }
 
 .logo {
@@ -2471,6 +2482,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-toggle {
+  display: none;
   position: absolute;
   right: 0;
   padding: 5px 15px;
@@ -2484,6 +2496,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.main-nav {
+  float: right;
+}
 .main-nav ul {
   margin: 0;
   padding: 0;
@@ -2491,6 +2506,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 .main-nav li {
   list-style: none;
+  float: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+.main-nav li:last-child {
+  border-right: none;
+}
+.main-nav li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: white;
+}
+.main-nav li a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .hero {
@@ -2501,6 +2530,11 @@ h1, h2, h3, h4, h5, h6 {
 .hero h1 {
   font-size: 44px;
   font-weight: 700;
+}
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 38px;
+  }
 }
 .hero .subtitle {
   margin-top: -1em;
@@ -2532,5 +2566,6 @@ html, body {
 }
 
 body {
+  padding-top: 50px;
   background: white;
 }
