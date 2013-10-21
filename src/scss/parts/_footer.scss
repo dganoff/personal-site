@@ -1,0 +1,26 @@
+footer {
+	position: relative;
+	bottom: 0;
+	padding: $gutter;
+	background: #343838;
+	color: white;
+}
+
+.footer-nav {
+	text-align: center;
+
+	a {
+		display: inline-block;
+		padding: .5em;
+		text-decoration: none;
+		font-size: 2em;
+
+		&:link, &:visited {
+			color: white;
+		}
+
+		&:hover, &:active {
+			color: $link-color;
+		}
+	}
+}

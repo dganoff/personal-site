@@ -2672,6 +2672,30 @@ article p {
   background: rgba(255, 255, 255, 0.1);
 }
 
+footer {
+  position: relative;
+  bottom: 0;
+  padding: 15px;
+  background: #343838;
+  color: white;
+}
+
+.footer-nav {
+  text-align: center;
+}
+.footer-nav a {
+  display: inline-block;
+  padding: .5em;
+  text-decoration: none;
+  font-size: 2em;
+}
+.footer-nav a:link, .footer-nav a:visited {
+  color: white;
+}
+.footer-nav a:hover, .footer-nav a:active {
+  color: #008799;
+}
+
 .hero {
   background-image: -webkit-linear-gradient(top right, #008799, #00e1ff);
   background-image: linear-gradient(to bottom left, #008799, #00e1ff);
@@ -2722,10 +2746,10 @@ article p {
 .social-tile-link:link, .social-tile-link:visited {
   color: white;
 }
-.social-tile-link:hover {
+.social-tile-link:hover, .social-tile-link:active {
   background: rgba(255, 255, 255, 0.25);
 }
-.social-tile-link:hover i[class^="icon-"] {
+.social-tile-link:hover i[class^="icon-"], .social-tile-link:active i[class^="icon-"] {
   -webkit-animation: happy 0.5s linear infinite;
   -moz-animation: happy 0.5s linear infinite;
   animation: happy 0.5s linear infinite;

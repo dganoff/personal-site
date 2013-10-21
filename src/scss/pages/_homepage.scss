@@ -51,7 +51,7 @@
 
 	// @include transition(all .3s ease-in);
 
-	&:hover {
+	&:hover, &:active {
 		background: rgba(white,.25);
 
 		i[class^="icon-"] {
