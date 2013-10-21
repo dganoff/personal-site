@@ -2597,6 +2597,29 @@ article p {
   text-align: right;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  background: white;
+}
+
+.icon-codepen-black {
+  background: url(../img/codepen-logo-black.svg) center center no-repeat;
+}
+
+.icon-codepen-white {
+  background: url(../img/codepen-logo-white.svg) center center no-repeat;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -2669,7 +2692,7 @@ article p {
   color: white;
 }
 .main-nav li a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -2693,7 +2716,14 @@ footer {
   color: white;
 }
 .footer-nav a:hover, .footer-nav a:active {
-  color: #008799;
+  opacity: 0.7;
+}
+.footer-nav a .icon-codepen-white {
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }
 
 .hero {
@@ -2706,6 +2736,7 @@ footer {
 .hero h1 {
   font-size: 44px;
   font-weight: 900;
+  text-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 500px) {
   .hero h1 {
@@ -2759,18 +2790,8 @@ footer {
   font-size: 3em;
   color: #005a66;
 }
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  padding-top: 50px;
-  background: white;
+.social-tile-link .icon-codepen-black {
+  height: 49px;
+  background-size: 45px;
+  opacity: .6;
 }
