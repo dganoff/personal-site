@@ -1,11 +1,15 @@
 .hero {
-	background: lighten($primary-color,10);
+	// background: lighten($primary-color,10);
+	@include background-image(
+		linear-gradient(top right, $primary-color, lighten($primary-color,20))
+	);
 	color: white;
+	text-align: center;
 	font-weight: 100;
 
 	h1 {
 		font-size: 44px;
-		font-weight: 700;
+		font-weight: 900;
 
 		@media (max-width: $small-screen) {
 			font-size: 38px;
@@ -14,20 +18,51 @@
 
 	.subtitle {
 		margin-top: -1em;
+		font-weight: 100;
+		font-size: 1.3em;
+
+		@media (min-width: $small-screen) {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.hero-logo {
+
+	width: 100px;
+
+	@media (min-width: $small-screen) {
+		width: 145px;
+		@include animation(rotate 30.0s linear infinite);
 	}
 }
 
 .social-tile-link {
 	display: block;
-	padding: 1em;
-	background: #eee;
-	border: 1px solid #ccc;
+	border-radius: .25em;
+	padding-bottom: 10px;
 	text-align: center;
 	text-decoration: none;
+	font-weight: 400;
+	
+	&:link, &:visited {
+		color: white;
+	}
 
-	@include transition(all .3s ease-in);
+	// @include transition(all .3s ease-in);
 
 	&:hover {
-		background: #ccc;
+		background: rgba(white,.25);
+
+		i[class^="icon-"] {
+			@include animation(happy .5s linear infinite);
+		}
+	}
+
+	i[class^="icon-"] {
+		display: block;
+		font-size: 3em;
+		color: darken($link-color, 10);
+		// @include transition(all .5s $ease-in-out-back);
 	}
 }

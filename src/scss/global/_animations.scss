@@ -1,0 +1,23 @@
+@include keyframes(rotate) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+@include keyframes(happy) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  33% {
+  	@include transform(rotate(-10deg));
+  }
+  66% {
+    @include transform(rotate(10deg));
+  }
+  100% {
+  	@include transform(rotate(0deg));
+  }
+}

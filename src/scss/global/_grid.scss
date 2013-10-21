@@ -55,10 +55,13 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	text-align: center;
+	font-size: 0px; // fix for the inline-block spacing issue
 	@include clearfix;
 
 	.tile-grid-item {
-		float: left;
+		// float: left;
+		@include inline-block;
 		width: 50%;
 
 		@media (min-width: $small-screen) {
@@ -72,5 +75,7 @@
 		@media (min-width: $large-screen) {
 			width: percentage(1/5);
 		}
+
+		a {font-size: 16px;}
 	}
 }

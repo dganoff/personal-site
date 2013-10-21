@@ -15,7 +15,8 @@
     "assemble": "~0.4.13",
     "grunt-newer": "~0.5.4",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-gh-pages": "~0.8.0"
   },
   "engines": {
     "node": ">=0.10"

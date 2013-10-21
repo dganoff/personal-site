@@ -15,12 +15,22 @@ a {
 }
 
 // Copy:
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	// font-weight: inherit;
+}
+
 article p {
 	line-height: 1.45em;
 	color: #454545;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin-top: 0;
-	// font-weight: inherit;
+.lead {
+	font-size: 1.15em;
+	font-weight: 400;
 }
+
+// Formatting:
+.text-left {text-align: left;}
+.text-center {text-align: center;}
+.text-right {text-align: right;}

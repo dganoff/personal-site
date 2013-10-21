@@ -65,6 +65,10 @@ module.exports = function(grunt) {
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
 				tasks: ['assemble']
+			},
+			images: {
+				files: [SRC + 'images/*'],
+				tasks: ['copy']
 			}
 		},
 
@@ -107,7 +111,13 @@ module.exports = function(grunt) {
 						src: [SRC + 'bower-components/jquery/jquery.min.js'],
 						flatten: true,
 						dest: DIST + 'js'
-					} 
+					},
+					{
+						expand: true,
+						src: [SRC + 'images/*'],
+						flatten: true,
+						dest: DIST + 'img'
+					}
 				]
 			}
 		},
