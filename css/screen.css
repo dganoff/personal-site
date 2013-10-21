@@ -2542,17 +2542,17 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 }
 @media (min-width: 500px) {
   .tile-grid .tile-grid-item {
-    width: 33.33333%;
+    width: 25%;
   }
 }
 @media (min-width: 769px) {
   .tile-grid .tile-grid-item {
-    width: 25%;
+    width: 16.66667%;
   }
 }
 @media (min-width: 1025px) {
   .tile-grid .tile-grid-item {
-    width: 20%;
+    width: 12.5%;
   }
 }
 .tile-grid .tile-grid-item a {
@@ -2745,7 +2745,7 @@ footer {
 }
 .hero .subtitle {
   margin-top: -1em;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1.3em;
 }
 @media (min-width: 500px) {
