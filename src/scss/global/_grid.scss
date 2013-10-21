@@ -65,15 +65,15 @@
 		width: 50%;
 
 		@media (min-width: $small-screen) {
-			width: percentage(1/3);
-		}
-
-		@media (min-width: $medium-screen) {
 			width: percentage(1/4);
 		}
 
+		@media (min-width: $medium-screen) {
+			width: percentage(1/6);
+		}
+
 		@media (min-width: $large-screen) {
-			width: percentage(1/5);
+			width: percentage(1/8);
 		}
 
 		a {font-size: 16px;}
