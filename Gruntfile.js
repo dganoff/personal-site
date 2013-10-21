@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 			},
 			pages: {
 				files: {
-		        	DIST: [SRC + 'templates/pages/*.hbs']
+		        	dist: [SRC + 'templates/pages/*.hbs']
 		        }
 			},
 			blog: {
