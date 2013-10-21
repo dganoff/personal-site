@@ -1,0 +1,22 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Reset
+@import "normalize";
+
+// Bourbon Mixin Library:
+@import "../bower-components/bourbon/app/assets/stylesheets/bourbon";
+
+// Fonts
+@import "../bower-components/font-awesome/scss/variables";
+@import "../bower-components/font-awesome/scss/mixins";
+@import "../bower-components/font-awesome/scss/path";
+@import "../bower-components/font-awesome/scss/core";
+@import "../bower-components/font-awesome/scss/bootstrap";
+@import "../bower-components/font-awesome/scss/extras";
+@import "../bower-components/font-awesome/scss/icons";
+
+// Project-specific Files
+@import "global/vars";
+@import "global/grid";
+@import "global/layout";

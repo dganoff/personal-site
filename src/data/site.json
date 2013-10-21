@@ -1,0 +1,12 @@
+{
+    "title": "DemetriDesign",
+    "repo": "dganoff/personal-site",
+    "author": {
+        "name": "Demetri Ganoff",
+        "twitter": "@dganoff"
+    },
+    "meta": {
+        "description": "Personal website for Demetri Ganoff",
+        "keywords": "Front-end Developer, Web Designer, JavaScript, CSS, HTML, SASS, SCSS, NodeJS, GruntJS"
+    }
+}

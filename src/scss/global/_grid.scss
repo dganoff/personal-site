@@ -1,0 +1,51 @@
+.row {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	max-width: $container;
+	@include clearfix;
+
+	&.display {
+		[class^="grid-"], [class^="small-grid-"] {
+			border-right: 1px solid black;
+			background: #333;
+			color: white;
+			text-align: center;
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}
+
+	.row {
+		width: auto;
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+		max-width: none;
+	}
+}
+
+.columns {
+	position: relative;
+	float: left;
+	padding: 0 $gutter;
+}
+
+[class^="grid-"] {
+	position: relative;
+	width: 100%;
+}
+
+@for $i from 1 through $columns {
+	.grid-#{$i} {
+
+		@media (min-width: $small-screen) {
+			width: percentage($i/$columns);
+		}
+	}
+
+	.small-grid-#{$i} {
+		width: percentage($i/$columns);
+	}
+}

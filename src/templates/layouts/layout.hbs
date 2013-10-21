@@ -1,0 +1,32 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{site.title}}</title>
+
+	<meta name="author" content="{{ site.author.name }}, {{site.author.twitter}}" />
+    <meta name="description" content="{{ site.meta.description }}" />
+    <meta name="keywords" content="{{ site.meta.keywords }}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+	<header>
+		logo
+		{{> main-nav}}
+	</header>
+	<div class="row">
+		<div class="grid-12 columns">			
+			{{>body}}
+		</div>
+	</div>
+
+	<script src="js/app.min.js"></script>
+</body>
+</html>
