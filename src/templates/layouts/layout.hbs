@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{site.title}}</title>
+	<title>{{#if title}}{{title}} - {{/if}}{{site.title}}</title>
 
 	<link rel="icon" href="/favicon.png">
 
@@ -25,7 +25,6 @@
 
 	{{> footer}}
 
-	<script src="/js/jquery.min.js"></script>
 	<script src="/js/app.min.js"></script>
 </body>
 </html>

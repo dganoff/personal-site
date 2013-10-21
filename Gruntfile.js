@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 		            expand : true
 				}],
 				options: {
-					style: 'expanded'
+					style: 'compressed'
 				}
 			}
 		},
