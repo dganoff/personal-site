@@ -1,0 +1,21 @@
+---
+layout: blog-layout.hbs
+title: New Site!
+date: 10/20/2013
+sort: 1
+tags:
+- blogs
+---
+<h1>{{title}}</h1>
+
+<p class="lead">
+	Welcome to my fancy new site!
+</p>
+
+<p>
+	I decided to rebuild my website entirely. Recently things like GruntJS, NodeJS and static site generators have been grabbing my attention. My workflow has changed dramatically; now it relies mostly on NodeJS & GruntJS running in the background to compile my code (SASS, JavaScript minification, etc.) and run a local webserver. It's only a logical step forward to use one of the new fancy static site generators to create my personal site rather than something like WordPress.
+</p>
+
+<p>
+	The most popular static site generator is Jekyll. Jekyll is a great tool, so I've hear and read, but it runs on Ruby. I don't really use Ruby; I used to use Compass to compile my <code>SCSS</code> into <code>CSS</code>, but now I just use grunt-sass and Bourbon for the mixin library that Compass used to provide. Since all of my local development is aided by JavaScript-y stuff, I went in search for a GruntJS solution for generating static sites.
+</p>

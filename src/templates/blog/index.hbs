@@ -8,9 +8,9 @@ tags:
 		<section>
 			<article>
 				{{#each page.related}}
-					<a href="{{relative ../page.dest this.dest}}">
-						<h2>{{this.data.title}}</h2>
-						<h4 class="subtitle">Published: {{this.data.date}}</h4>
+					<a href="{{relative ../page.dest this.dest}}" class="blog-roll-item">
+						<h2 class="blog-title">{{this.data.title}}</h2>
+						<h4 class="blog-subtitle">Published: {{this.data.date}}</h4>
 					</a>
 				{{/each}}
 			</article>

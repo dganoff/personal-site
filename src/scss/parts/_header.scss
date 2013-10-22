@@ -59,6 +59,10 @@
 			text-decoration: none;
 			color: white;
 
+			&.active {
+				background: rgba($link-color, 0.5);
+			}
+
 			&:hover {
 				background: rgba(black, 0.2);
 			}

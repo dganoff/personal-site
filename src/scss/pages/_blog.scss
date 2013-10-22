@@ -1,0 +1,30 @@
+.blog-roll-item {
+	display: block;
+	text-decoration: none;
+	padding: 1em;
+	border-bottom: 1px solid #eee;
+
+	&:last-child {border-bottom: none;}
+
+	&:link {color: $dark-color;}
+	&:visited {color: lighten($dark-color,10);}
+
+	&:hover {
+		background: #eee;
+	}
+
+	&:active {
+		background: $link-color;
+		color: white;
+	}
+
+	.blog-title {
+		margin-bottom: .25em;
+		font-size: 1.5em;
+	}
+
+	.blog-subtitle {
+		margin-bottom: 0;
+		font-weight: 300;
+	}
+}
