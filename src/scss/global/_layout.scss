@@ -13,3 +13,8 @@ body {
 	padding-top: 50px;
 	background: $background-color;
 }
+
+::selection {
+	background: $dark-color;
+	color: white;
+}

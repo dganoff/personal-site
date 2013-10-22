@@ -87,19 +87,30 @@ module.exports = function(grunt) {
 				data: [SRC + "data/*.{json, yml}"],
 				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs'],
 				ext: '.html',
-				theme: THEME
+				theme: THEME,
+				collections: [
+					{
+						name: 'posts',
+						index: SRC + 'templates/blog/index.hbs'
+					}
+				]
 			},
 			pages: {
 				files: {
 		        	dist: [SRC + 'templates/pages/*.hbs']
 		        }
 			},
+			blogroll: {
+				files: {
+					'dist/blog/': [SRC + 'templates/blog/*.hbs']
+				}
+			},
 			blog: {
 				options: {
 					layout: 'blog-layout.hbs'
 				},
 				files: {
-					'dist/blog/': [SRC + 'templates/blog/*.hbs']
+					'dist/blog/posts/': [SRC + 'templates/blog/posts/*.hbs']
 				}
 			}
 		},
