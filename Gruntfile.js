@@ -102,7 +102,7 @@ module.exports = function(grunt) {
 			},
 			blogroll: {
 				files: {
-					'dist/blog/': [SRC + 'templates/blog/*.hbs']
+					'dist/blog/': [SRC + 'templates/blog/index.hbs']
 				}
 			},
 			blog: {
@@ -168,7 +168,7 @@ module.exports = function(grunt) {
 
 		clean: {
 			build: {
-				src: ["src"]
+				src: [DIST + "**/*.html"]
 			}
 		}
 	});

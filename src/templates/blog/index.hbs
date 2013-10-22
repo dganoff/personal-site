@@ -1,5 +1,8 @@
 ---
 title: Blog
+pages:
+- one
+- two
 ---
 <article class="text-center">
 	<h1>Blog</h1>
@@ -7,8 +10,15 @@ title: Blog
 	<p>Coming soon...</p>
 </article>
 
-<ul>
-	{{#each pages}}
-		<li>{{page.basename}}</li>
-	{{/each}}
-</ul>
+<hr>
+
+<div class="row">
+	<div class="grid-12 columns">
+		<h4>List the blog posts inside src/templates/blog/posts here:</h4>
+		<ul>
+			{{#each pages}}
+				<li>{{this.basename}}</li>
+			{{/each}}
+		</ul>
+	</div>
+</div>
