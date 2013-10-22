@@ -5,10 +5,10 @@ title: Blog
 	<h1>Blog</h1>
 	
 	<p>Coming soon...</p>
-
-	<ul>
-		{{#each tags.post}}
-			<li>{{this}}</li>
-		{{/each}}
-	</ul>
 </article>
+
+<ul>
+	{{#each pages}}
+		<li>{{page.basename}}</li>
+	{{/each}}
+</ul>
