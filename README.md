@@ -1,4 +1,4 @@
 Demetri Ganoff's Personal Website
 =======
 
-Work-in-progress....
+(Live Site)[http://demetridesign.com]
