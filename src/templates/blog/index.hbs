@@ -8,19 +8,12 @@ tags:
 		<section>
 			<article>
 				{{#each page.related}}
-					<h2>{{this.data.title}}</h2>
-					<h4 class="subtitle">Last Updated: {{this.data.last-updated}}</h4>
+					<a href="{{relative ../page.dest this.dest}}">
+						<h2>{{this.data.title}}</h2>
+						<h4 class="subtitle">Published: {{this.data.date}}</h4>
+					</a>
 				{{/each}}
 			</article>
 		</section>
-		<ul>
-		  {{#each page.related}}
-		    <li>
-		      <a href="{{relative ../page.dest this.dest}}">{{this.data.title}}</a> <br>
-		      Date Published: {{this.data.date}}
-		      <p>{{this.data.excerpt}}</p>
-		    </li>
-		  {{/each}}
-		</ul>
 	</div>
 </div>

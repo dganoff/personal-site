@@ -95,15 +95,7 @@ module.exports = function(grunt) {
 		        	dist: [SRC + 'templates/pages/*.hbs']
 		        }
 			},
-			blogroll: {
-				files: {
-					'dist/blog/': [SRC + 'templates/blog/index.hbs']
-				}
-			},
 			blog: {
-				options: {
-					layout: 'blog-layout.hbs'
-				},
 				files: {
 					'dist/blog/': [SRC + 'templates/blog/*.hbs']
 				}
