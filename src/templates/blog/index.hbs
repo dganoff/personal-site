@@ -1,24 +1,26 @@
 ---
 title: Blog
-pages:
-- one
-- two
+tags:
+- blogs
 ---
-<article class="text-center">
-	<h1>Blog</h1>
-	
-	<p>Coming soon...</p>
-</article>
-
-<hr>
-
-<div class="row">
+<div class="row" role="main">
 	<div class="grid-12 columns">
-		<h4>List the blog posts inside src/templates/blog/posts here:</h4>
+		<section>
+			<article>
+				{{#each page.related}}
+					<h2>{{this.data.title}}</h2>
+					<h4 class="subtitle">Last Updated: {{this.data.last-updated}}</h4>
+				{{/each}}
+			</article>
+		</section>
 		<ul>
-			{{#each pages}}
-				<li>{{this.basename}}</li>
-			{{/each}}
+		  {{#each page.related}}
+		    <li>
+		      <a href="{{relative ../page.dest this.dest}}">{{this.data.title}}</a> <br>
+		      Date Published: {{this.data.date}}
+		      <p>{{this.data.excerpt}}</p>
+		    </li>
+		  {{/each}}
 		</ul>
 	</div>
 </div>

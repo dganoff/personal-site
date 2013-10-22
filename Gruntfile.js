@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
-				tasks: ['assemble']
+				tasks: ['clean', 'assemble']
 			},
 			images: {
 				files: [SRC + 'images/*'],
@@ -88,12 +88,7 @@ module.exports = function(grunt) {
 				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs'],
 				ext: '.html',
 				theme: THEME,
-				collections: [
-					{
-						name: 'posts',
-						index: SRC + 'templates/blog/index.hbs'
-					}
-				]
+				plugins: [ 'assemble-related-pages' ]
 			},
 			pages: {
 				files: {
@@ -110,7 +105,7 @@ module.exports = function(grunt) {
 					layout: 'blog-layout.hbs'
 				},
 				files: {
-					'dist/blog/posts/': [SRC + 'templates/blog/posts/*.hbs']
+					'dist/blog/': [SRC + 'templates/blog/*.hbs']
 				}
 			}
 		},
