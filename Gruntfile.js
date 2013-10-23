@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs'],
 				ext: '.html',
 				theme: THEME,
-				plugins: [ 'assemble-related-pages' ]
+				plugins: [ 'assemble-related-pages', 'permalinks' ]
 			},
 			pages: {
 				files: {
@@ -96,6 +96,11 @@ module.exports = function(grunt) {
 		        }
 			},
 			blog: {
+				// options: {
+				// 	permalinks: {
+				// 		structure: ':year/:month/:day/:basename:ext'
+				// 	}
+				// },
 				files: {
 					'dist/blog/': [SRC + 'templates/blog/*.hbs']
 				}

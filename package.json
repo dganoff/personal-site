@@ -18,7 +18,8 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-gh-pages": "~0.8.0",
     "grunt-contrib-clean": "~0.5.0",
-    "assemble-related-pages": "0.0.4"
+    "assemble-related-pages": "0.0.4",
+    "permalinks": "~0.1.8"
   },
   "engines": {
     "node": ">=0.10"
