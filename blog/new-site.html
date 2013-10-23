@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Blog / DemetriDesign</title>
+	<title>New Site! / DemetriDesign</title>
 
 	<link rel="icon" href="/favicon.png">
 
@@ -26,23 +26,48 @@
 
 	<ul id="main-nav">
 		<li><a href="/" ><i class="icon-home"></i> Home</a></li>
-		<li><a href="/blog"  class="active"><i class="icon-pencil"></i> Blog</a></li>
+		<li><a href="/blog" ><i class="icon-pencil"></i> Blog</a></li>
 		<li><a href="/work.html" ><i class="icon-wrench"></i> Work</a></li>
 	</ul>
 </nav></div>
 </header>
 
 	
-<div class="row" role="main">
+<div class="row">
 	<div class="grid-12 columns">
-		<section>
-			<article>
+		<a href="/blog" class="blog-back">Blog</a>
+
+		<section role="main">
+			<article class="article-body">
 				
-					<a href="new-site.html" class="blog-roll-item">
-						<h2 class="blog-title">New Site!</h2>
-						<h4 class="blog-subtitle">Published: 10/21/2013</h4>
-					</a>
-				
+<h1>New Site!</h1>
+<h2 class="subtitle">10/21/2013</h2>
+
+<p class="lead">
+	Welcome to my fancy new site!
+</p>
+
+<p>
+	I decided to rebuild my website entirely. Recently things like <a href="http://gruntjs.com/">GruntJS</a>, <a href="http://nodejs.org/">NodeJS</a> and static site generators have been grabbing my attention. My workflow has changed dramatically; now it relies mostly on NodeJS & GruntJS running in the background to compile my code (SASS, JavaScript minification, etc.) and run a local webserver. It's only a logical step forward to use one of the new fancy static site generators to create my personal site rather than something like WordPress.
+</p>
+
+<p>
+	One of the most popular static site generators is <a href="http://jekyllrb.com/">Jekyll</a>, but since all of my local development is aided by JavaScript-y stuff, I went in search for a GruntJS solution for generating static sites. So, here comes <a href="http://assemble.io/">Grunt Assemble</a>! Assemble runs as a Grunt task to compile .hbs files (using <a href="http://handlebarsjs.com/">Handlebars</a> templates) into static .html pages.
+</p>
+
+<p>
+	So far I've built out the basic structure of this site using Assemble and I've very happy with it. Assemble was easy to learn (spent about a day learning it and another putting together this site). The blog was a tricky one to get working and there are still a few things I need to work on:
+</p>
+
+<ol>
+	<li>Date formatted permalinks for blog posts</li>
+	<li>Blog posts in chronological order</li>
+	<li>Work section of the site</li>
+</ol>
+
+<p>
+	Anyway, thanks for stopping by my new site! Catch me on twitter <a href="http://twitter.com/dganoff">@dganoff</a> anytime :).
+</p>
 			</article>
 		</section>
 	</div>
