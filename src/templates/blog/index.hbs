@@ -5,15 +5,13 @@ tags:
 ---
 <div class="row" role="main">
 	<div class="grid-12 columns">
-		<section>
-			<article>
-				{{#each page.related}}
-					<a href="{{relative ../page.dest this.dest}}" class="blog-roll-item">
-						<h2 class="blog-title">{{this.data.title}}</h2>
-						<h4 class="blog-subtitle">Published: {{this.data.date}}</h4>
-					</a>
-				{{/each}}
-			</article>
-		</section>
+		<article>
+			{{#each page.related}}
+				<a href="{{relative ../page.dest this.dest}}" class="blog-roll-item">
+					<h2 class="blog-title">{{this.data.title}}</h2>
+					<h4 class="blog-subtitle">Published: {{this.data.date}}</h4>
+				</a>
+			{{/each}}
+		</article>
 	</div>
 </div>
