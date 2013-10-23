@@ -1,4 +1,5 @@
 .blog-roll-item {
+	position: relative;
 	display: block;
 	text-decoration: none;
 	padding: 1em;
@@ -18,6 +19,16 @@
 		color: white;
 	}
 
+	&:after {
+		position: absolute;
+		right: 5px;
+		top: 30%;
+		content: "\f105";
+		font-family: FontAwesome;
+		font-size: 2em;
+		color: #ccc;
+	}
+
 	.blog-title {
 		margin-bottom: .25em;
 		font-size: 1.5em;
@@ -25,6 +36,55 @@
 
 	.blog-subtitle {
 		margin-bottom: 0;
+		font-weight: 300;
+	}
+}
+
+.blog-back {
+	display: block;
+	position: relative;
+	padding: .25em 1.5em;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: em(11);
+
+	&:link, &:visited {
+		color: #ccc;
+	}
+
+	&:hover, &:active {
+		color: black;
+	}
+
+	&:before {
+		position: absolute;
+		left: 5px;
+		top: 20%;
+		content: "\f104";
+		font-family: FontAwesome;
+	}
+}
+
+.article-body {
+	font-size: 1em;
+
+	@media (min-width: $small-screen) {
+		font-size: 1.25em;
+	}
+
+	@media (min-width: $medium-screen) {
+		font-size: 1.5em;
+	}
+
+	@media (min-width: $large-screen) {
+		font-size: 1.75em;
+	}
+
+	.subtitle {
+		margin-top: -1.5em;
+		color: #ccc;
+		font-size: em(11);
 		font-weight: 300;
 	}
 }

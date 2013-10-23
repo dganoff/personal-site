@@ -11,6 +11,7 @@
 		font-size: 44px;
 		font-weight: 900;
 		text-shadow: 0px 5px 4px rgba(black,.1);
+		@include animation(fadeUp .5s ease-out);
 
 		@media (max-width: $small-screen) {
 			font-size: 38px;
@@ -21,6 +22,7 @@
 		margin-top: -1em;
 		font-weight: 300;
 		font-size: 1.3em;
+		@include animation(fadeUp .5s ease-out);
 
 		@media (min-width: $small-screen) {
 			font-size: 1.5em;
@@ -56,7 +58,7 @@
 		background: rgba(white,.25);
 
 		i[class^="icon-"] {
-			@include animation(happy .5s linear infinite);
+			@include animation(happy .5s $ease-in-out-back infinite alternate);
 		}
 	}
 

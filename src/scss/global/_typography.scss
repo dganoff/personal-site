@@ -10,7 +10,7 @@ a {
 	}
 
 	&:visited {
-		color: darken($link-color, 10);
+		color: darken($link-color, 5);
 	}
 }
 
@@ -23,6 +23,8 @@ h1, h2, h3, h4, h5, h6 {
 article p {
 	line-height: 1.45em;
 	color: #454545;
+	margin: 0 0 1em 0;
+	text-indent: 1em;
 }
 
 .lead {

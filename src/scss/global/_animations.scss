@@ -9,15 +9,26 @@
 
 @include keyframes(happy) {
   0% {
-    @include transform(rotate(0deg));
+    @include transform(rotate(-10deg));
   }
-  33% {
-  	@include transform(rotate(-10deg));
-  }
-  66% {
-    @include transform(rotate(10deg));
-  }
+  // 33% {
+  // 	@include transform(rotate(-10deg));
+  // }
+  // 66% {
+  //   @include transform(rotate(10deg));
+  // }
   100% {
-  	@include transform(rotate(0deg));
+  	@include transform(rotate(10deg));
+  }
+}
+
+@include keyframes(fadeUp) {
+  from {
+    @include transform(translateY(20px));
+    opacity: 0;
+  }
+  to {
+    @include transform(translateY(0px));
+    opacity: 1;
   }
 }

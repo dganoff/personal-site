@@ -1,21 +1,35 @@
 ---
 layout: blog-layout.hbs
 title: New Site!
-date: 10/20/2013
-sort: 1
+date: 10/21/2013
 tags:
 - blogs
 ---
 <h1>{{title}}</h1>
+<h2 class="subtitle">{{date}}</h2>
 
 <p class="lead">
 	Welcome to my fancy new site!
 </p>
 
 <p>
-	I decided to rebuild my website entirely. Recently things like GruntJS, NodeJS and static site generators have been grabbing my attention. My workflow has changed dramatically; now it relies mostly on NodeJS & GruntJS running in the background to compile my code (SASS, JavaScript minification, etc.) and run a local webserver. It's only a logical step forward to use one of the new fancy static site generators to create my personal site rather than something like WordPress.
+	I decided to rebuild my website entirely. Recently things like <a href="http://gruntjs.com/">GruntJS</a>, <a href="http://nodejs.org/">NodeJS</a> and static site generators have been grabbing my attention. My workflow has changed dramatically; now it relies mostly on NodeJS & GruntJS running in the background to compile my code (SASS, JavaScript minification, etc.) and run a local webserver. It's only a logical step forward to use one of the new fancy static site generators to create my personal site rather than something like WordPress.
 </p>
 
 <p>
-	The most popular static site generator is Jekyll. Jekyll is a great tool, so I've hear and read, but it runs on Ruby. I don't really use Ruby; I used to use Compass to compile my <code>SCSS</code> into <code>CSS</code>, but now I just use grunt-sass and Bourbon for the mixin library that Compass used to provide. Since all of my local development is aided by JavaScript-y stuff, I went in search for a GruntJS solution for generating static sites.
+	One of the most popular static site generators is <a href="http://jekyllrb.com/">Jekyll</a>, but since all of my local development is aided by JavaScript-y stuff, I went in search for a GruntJS solution for generating static sites. So, here comes <a href="http://assemble.io/">Grunt Assemble</a>! Assemble runs as a Grunt task to compile .hbs files (using <a href="http://handlebarsjs.com/">Handlebars</a> templates) into static .html pages.
+</p>
+
+<p>
+	So far I've built out the basic structure of this site using Assemble and I've very happy with it. Assemble was easy to learn (spent about a day learning it and another putting together this site). The blog was a tricky one to get working and there are still a few things I need to work on:
+</p>
+
+<ol>
+	<li>Date formatted permalinks for blog posts</li>
+	<li>Blog posts in chronological order</li>
+	<li>Work section of the site</li>
+</ol>
+
+<p>
+	Anyway, thanks for stopping by my new site! Catch me on twitter <a href="http://twitter.com/dganoff">@dganoff</a> anytime :).
 </p>
