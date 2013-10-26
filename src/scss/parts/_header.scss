@@ -3,7 +3,7 @@
 	top: 0;
 	z-index: 9999;
 	width: 100%;
-	background: rgba(darken($primary-color,25),.75);
+	background: rgba(darken($link-color,35),.75);
 	color: white;
 	@include clearfix;
 
@@ -61,12 +61,14 @@
 			text-decoration: none;
 			color: white;
 
-			&.active {
+			&.active, &.active:hover {
 				background: rgba($link-color, 0.5);
+				color: inherit;
 			}
 
 			&:hover {
 				background: rgba(black, 0.2);
+				color: $link-color;
 			}
 		}
 	}
