@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Blog / DemetriDesign</title>
+	<title>Code Test with Prism.js! / DemetriDesign</title>
 
 	<link rel="icon" href="/favicon.png">
 
@@ -26,33 +26,58 @@
 
 	<ul id="main-nav">
 		<li><a href="/" ><i class="icon-home"></i> Home</a></li>
-		<li><a href="/blog"  class="active"><i class="icon-pencil"></i> Blog</a></li>
+		<li><a href="/blog" ><i class="icon-pencil"></i> Blog</a></li>
 		<li><a href="/work.html" ><i class="icon-wrench"></i> Work</a></li>
 	</ul>
 </nav></div>
 </header>
 
 	
-<div class="row" role="main">
+<div class="row">
 	<div class="grid-12 columns">
-		<article>
-			
-				<a href="codepen-embed.html" class="blog-roll-item">
-					<h2 class="blog-title">Codepen Embed</h2>
-					<h4 class="blog-subtitle">Published: 10/26/2013</h4>
-				</a>
-			
-				<a href="code-test.html" class="blog-roll-item">
-					<h2 class="blog-title">Code Test with Prism.js!</h2>
-					<h4 class="blog-subtitle">Published: 10/26/2013</h4>
-				</a>
-			
-				<a href="new-site.html" class="blog-roll-item">
-					<h2 class="blog-title">New Site!</h2>
-					<h4 class="blog-subtitle">Published: 10/21/2013</h4>
-				</a>
-			
-		</article>
+		<a href="/blog" class="blog-back" title="Back to Blog Posts">Blog</a>
+
+		<section role="main">
+			<article class="article-body">
+				
+<h1>Code Test with Prism.js!</h1>
+<h2 class="subtitle">10/26/2013</h2>
+
+<h3>SCSS:</h3>
+<p>Check out some syntax highlighted SCSS:</p>
+<pre>
+<code class="language-css">.class {
+	width: 50px;
+	height: 20px;
+	@include box-sizing(border-box);
+
+	.nested-class {
+		background: yellow;
+	}
+}</code>
+</pre>
+
+<h3>HTML:</h3>
+<p>Check out some syntax highlighted HTML:</p>
+<pre>
+<code class="language-markup">&lt;!-- You must HTML encode your markup before using it in the code tag --&gt;
+&lt;span class=&quot;row&quot;&gt;
+	&lt;span class=&quot;grid-4 columns&quot;&gt;&lt;/span&gt;
+	&lt;span class=&quot;grid-4 columns&quot;&gt;&lt;/span&gt;
+	&lt;span class=&quot;grid-4 columns&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;</code>
+</pre>
+
+<h3>JavaScript:</h3>
+<p>Check out some syntax highlighted JavaScript:</p>
+<pre>
+<code class="language-javascript">var foo = function(args) {
+	args = "yay!";
+	return args;
+}</code>
+</pre>
+			</article>
+		</section>
 	</div>
 </div>
 

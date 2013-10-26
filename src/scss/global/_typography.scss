@@ -3,6 +3,11 @@ body {
 	font-weight: 300;
 }
 
+// Formatting:
+.text-left {text-align: left;}
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+
 // Links:
 a {
 	&:link {
@@ -29,14 +34,13 @@ article {
 	p {
 		text-indent: 1em;
 	}
+
+	pre {
+		font-size: em(12);
+	}
 }
 
 .lead {
 	font-size: 1.15em;
 	font-weight: 400;
 }
-
-// Formatting:
-.text-left {text-align: left;}
-.text-center {text-align: center;}
-.text-right {text-align: right;}

@@ -1,0 +1,44 @@
+---
+layout: blog-layout.hbs
+title: Code Test with Prism.js!
+date: 10/26/2013
+tags:
+- blogs
+published: true
+---
+<h1>{{title}}</h1>
+<h2 class="subtitle">{{date}}</h2>
+
+<h3>SCSS:</h3>
+<p>Check out some syntax highlighted SCSS:</p>
+<pre>
+<code class="language-css">.class {
+	width: 50px;
+	height: 20px;
+	@include box-sizing(border-box);
+
+	.nested-class {
+		background: yellow;
+	}
+}</code>
+</pre>
+
+<h3>HTML:</h3>
+<p>Check out some syntax highlighted HTML:</p>
+<pre>
+<code class="language-markup">&lt;!-- You must HTML encode your markup before using it in the code tag --&gt;
+&lt;span class=&quot;row&quot;&gt;
+	&lt;span class=&quot;grid-4 columns&quot;&gt;&lt;/span&gt;
+	&lt;span class=&quot;grid-4 columns&quot;&gt;&lt;/span&gt;
+	&lt;span class=&quot;grid-4 columns&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;</code>
+</pre>
+
+<h3>JavaScript:</h3>
+<p>Check out some syntax highlighted JavaScript:</p>
+<pre>
+<code class="language-javascript">var foo = function(args) {
+	args = "yay!";
+	return args;
+}</code>
+</pre>

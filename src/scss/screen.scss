@@ -16,6 +16,9 @@
 @import "../bower-components/font-awesome/scss/extras";
 @import "../bower-components/font-awesome/scss/icons";
 
+// Prism syntax highlighter. Source: http://prismjs.com/
+@import "vendor/prism/prism";
+
 // Project-specific Files
 
 @import "global/vars",
