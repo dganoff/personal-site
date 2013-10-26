@@ -30,11 +30,13 @@
 	}
 
 	.blog-title {
+		margin-top: 0;
 		margin-bottom: .25em;
 		font-size: 1.5em;
 	}
 
 	.blog-subtitle {
+		margin-top: 0;
 		margin-bottom: 0;
 		font-weight: 300;
 	}
@@ -86,5 +88,9 @@
 		color: #ccc;
 		font-size: em(11);
 		font-weight: 300;
+	}
+
+	h1 {
+		margin-top: 0;
 	}
 }
