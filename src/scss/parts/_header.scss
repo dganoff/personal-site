@@ -6,6 +6,8 @@
 	background: rgba(darken($primary-color,25),.75);
 	color: white;
 	@include clearfix;
+
+	@include animation(loadDown .5s $ease-in-out-back);
 }
 
 .logo {

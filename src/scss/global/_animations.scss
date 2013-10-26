@@ -11,12 +11,6 @@
   0% {
     @include transform(rotate(-10deg));
   }
-  // 33% {
-  // 	@include transform(rotate(-10deg));
-  // }
-  // 66% {
-  //   @include transform(rotate(10deg));
-  // }
   100% {
   	@include transform(rotate(10deg));
   }
@@ -30,5 +24,14 @@
   to {
     @include transform(translateY(0px));
     opacity: 1;
+  }
+}
+
+@include keyframes(loadDown) {
+  from {
+    @include transform(translateY(-100%));
+  }
+  to {
+    @include transform(translateY(0px));
   }
 }
