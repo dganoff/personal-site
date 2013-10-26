@@ -1,5 +1,6 @@
 .hero {
 	// background: lighten($primary-color,10);
+	background-color: $link-color;
 	@include background-image(
 		linear-gradient(top right, $primary-color, lighten($primary-color,20))
 	);
@@ -70,7 +71,7 @@
 
 	.icon-codepen-black {
 		height: 49px;
-		background-size: 45px;
+		background-size: 100% 45px;
 		opacity: .6;
 	}
 }

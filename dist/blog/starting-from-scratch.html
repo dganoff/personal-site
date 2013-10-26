@@ -1,0 +1,205 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Starting From Scratch / DemetriDesign</title>
+
+	<link rel="icon" href="/favicon.png">
+
+	<meta name="author" content="Demetri Ganoff, @dganoff" />
+    <meta name="description" content="Personal website for Demetri Ganoff" />
+    <meta name="keywords" content="Front-end Developer, Web Designer, JavaScript, CSS, HTML, SASS, SCSS, NodeJS, GruntJS" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/screen.css">
+</head>
+<body>
+	<header role="banner" class="header">
+	<div class="row"><a href="/" class="logo"></a>
+		<nav role="navigation" class="main-nav">
+	<a href="" class="nav-toggle" id="mobile-toggle"><i class="icon-reorder"></i></a>
+
+	<ul id="main-nav">
+		<li><a href="/" ><i class="icon-home"></i> Home</a></li>
+		<li><a href="/blog" ><i class="icon-pencil"></i> Blog</a></li>
+		<li><a href="/work.html" ><i class="icon-wrench"></i> Work</a></li>
+	</ul>
+</nav></div>
+</header>
+
+	
+<div class="row">
+	<div class="grid-12 columns">
+		<a href="/blog" class="blog-back" title="Back to Blog Posts">Blog</a>
+
+		<section role="main">
+			<article class="article-body">
+				
+<h1>Starting From Scratch</h1>
+<h2 class="subtitle">10/26/2013</h2>
+
+<p class="lead">
+	Creating this new site was a lot of fun and a great learning experience, so I'd like to share some of the new technologies I used to build it.
+</p>
+
+<h3>A New Workflow</h3>
+<p>
+	Learning to use <a href="http://gruntjs.com/">GruntJS</a> was a huge turning point in my development workflow. I now use grunt to: run a local web server, live-reload <em>any</em> changed files, compile SASS (scss) into CSS, minify & concatenate my JavaScript, compile my static HTML files, and even deploy changes to GitHub pages. Below is a list of all the grunt goodness that was used:
+</p>
+<ol>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-uglify">Grunt Uglify</a><br>
+		JavaScript minification
+	</li>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-connect">Grunt Connect</a><br>
+		local web server with livereload
+	</li>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-watch">Grunt Watch</a><br>
+		watch any files for changes and trigger livereload
+	</li>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-sass">Grunt SASS</a><br>
+		compile SASS into CSS
+	</li>
+	<li>
+		<a href="https://github.com/assemble/assemble">Grunt Assemble</a><br>
+		compile .hbs, .md into .html
+	</li>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-copy">Grunt Copy</a><br>
+		copy assets from source folder to distribution folder upon build
+	</li>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-concat">Grunt Concat</a><br>
+		concatenate JavaScript files in order
+	</li>
+	<li>
+		<a href="https://github.com/tschaub/grunt-gh-pages">Grunt GH Pages</a><br>
+		create/update GitHub page branch for easy deployment
+	</li>
+	<li>
+		<a href="https://github.com/gruntjs/grunt-contrib-clean">Grunt Clean</a><br>
+		removes certain files from the distribution folder upon build
+	</li>
+</ol>
+
+<h4>Bower Package Manager</h4>
+<p>
+	Another awesome part of my new workflow utilizes <a href="http://bower.io/">Twitter's Bower package manager</a>. It's a npm module that downloads third-party (or your own) development assets such as JavaScript or CSS libraries instead of you having to manually find the files yourself. There's a bower.json file you can use to manager the packages for a project. You can specify what version of the library you need, or simply say you want the "latest" version. 
+</p>
+<p>
+	For this project I've used bower to include <a href="http://jquery.com/">jQuery</a>, <a href="http://bourbon.io/">Bourbon SASS mixin library</a> and <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> icon fonts. As time goes on, I'm sure I will add more dev dependencies as I need them.
+</p>
+
+<h4>Styling with SASS and Bourbon</h4>
+<p>
+	I'm still addicted to SASS. Even though I've switched my entire workflow over to NodeJS, I can't let go of SASS (ruby gem). I honestly haven't tried LESS yet and I'm a bit scared to make the transition. Since Grunt allows me to compile SASS fairly quickly, I'm going to stick to it for now.
+</p>
+<p>
+	I brought in Bourbon so that I wouldn't have to rely on yet another ruby gem for a mixin library (compass). I loved compass, but bourbon seems to be fulfilling my needs just the same.
+</p>
+<h5>No CSS frameworks...</h5>
+<p>
+	I decided not to start with any frameworks like Zurb Foundation or Twitter Bootstrap because I wanted to keep this project limited to just what I needed (for the most part). I created my own simple responsive grid system that's based on Foundation's. As I need more features on the site, I'll try to create them on my own with the help of bourbon.
+</p>
+<p>
+	Here's how I created the simple responsive grids (mobile-first):
+</p>
+
+<h5>HTML Markup:</h5>
+<pre>
+<code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;grid-3 columns&quot;&gt;25% width grid&lt;/div&gt;
+	&lt;div class=&quot;grid-3 columns&quot;&gt;25% width grid&lt;/div&gt;
+	&lt;div class=&quot;grid-3 columns&quot;&gt;25% width grid&lt;/div&gt;
+	&lt;div class=&quot;grid-3 columns&quot;&gt;25% width grid&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<h5>SCSS:</h5>
+<p>This assumes you have already set values to the variables: <code>$container</code>, <code>$gutter</code>, <code>$columns</code>, and <code>$small-screen</code></p>
+<pre>
+<code class="language-css">.row {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	max-width: $container;
+	@include clearfix;
+
+	.row {
+		width: auto;
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+		max-width: none;
+	}
+}
+
+.columns {
+	position: relative;
+	float: left;
+	padding: $gutter;
+}
+
+[class^="grid-"] {
+	position: relative;
+	width: 100%;
+}
+
+@for $i from 1 through $columns {
+	.grid-#{$i} {
+
+		@media (min-width: $small-screen) {
+			width: percentage($i/$columns);
+		}
+	}
+
+	.small-grid-#{$i} {
+		width: percentage($i/$columns);
+	}
+}</code>
+</pre>
+
+<h4>That's about it...</h4>
+<p>
+	I'd like to go into more detail about how I used Grunt Assemble to build this site statically and the benefits, but as you can see this post is already getting super long. Thanks if you made it this far!
+</p>
+			</article>
+		</section>
+	</div>
+</div>
+
+	<footer role="contentinfo">
+	<section class="text-center">
+		Hand crafted by Demetri Ganoff.
+	</section>
+	<nav class="footer-nav">
+		<a title="@dganoff" href="http://www.twitter.com/dganoff"><i class="icon-twitter"></i></a>
+		<a title="GitHub.com/dganoff" href="http://github.com/dganoff"><i class="icon-github"></i></a>
+		<a title="CodePen.io/dganoff" href="http://codepen.io/dganoff"><i class="icon-codepen-white"></i></a>
+		<a title="LinkedIn" href="http://www.linkedin.com/pub/demetri-ganoff/2b/97a/a58"><i class="icon-linkedin"></i></a>
+	</nav>
+</footer>
+
+	<script src="/js/app.min.js"></script>
+	<script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-28553110-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
