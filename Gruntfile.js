@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: [SRC + 'js/*.js'],
-				tasks: ['uglify', 'concat']
+				tasks: ['uglify', 'concat', 'copy:javascript']
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						src: [SRC + 'bower-components/jquery/jquery.min.js'],
+						src: [SRC + 'bower-components/jquery/jquery.min.map'], // apparently required for latest version of jQuery from bower
 						flatten: true,
 						dest: DIST + 'js'
 					}
@@ -146,7 +146,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/output/app.min.js'],
+				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/vendor/prism.min.js', SRC + 'js/output/app.min.js'],
 				dest: DIST + 'js/app.min.js'
 			}
 		},
