@@ -22,6 +22,13 @@ a {
 // Copy:
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 900; // based on the Lato Google Font
+
+	small {
+		display: block;
+		color: $dark-color;
+		font-size: 65%;
+		font-weight: 400;
+	}
 }
 
 article {

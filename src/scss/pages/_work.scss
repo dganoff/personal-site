@@ -1,6 +1,21 @@
+.me-portrait {
+	border-radius: 6px;
+}
+
+.about-me {
+	h1 {
+		margin-top: 0;
+	}
+
+	@media (max-width: $small-screen) {
+		text-align: center;
+	}
+}
+
 .timeline {
 	position: relative;
 	overflow: hidden;
+	padding: $gutter 0;
 
 	&:after {
 		position: absolute;
@@ -9,45 +24,86 @@
 		height: 100%;
 		width: 10px;
 		background: $dark-color;
-		left: 49.5%;
+		left: 10px;
 		top: 0;
 		border-radius: 4px;
+	}
+
+	@media (min-width: 730px) {
+		&:after {
+			left: 49.5%;
+		}
 	}
 }
 
 .year {
 	width: 50px;
 	padding: .25em;
-	margin: 0 auto;
+	margin-top: $gutter;
 	border-radius: 4px;
 	background: $dark-color;
 	color: white;
 	text-align: center;
 	font-weight: 900;
+
+	@media (min-width: 730px) {
+		clear: both;
+		margin: $gutter auto 0 auto;
+	}
 }
 
 .blip {
-	clear: both;
-	position: relative;
-	top: 35px;
-	width: 25px;
-	height: 25px;
-	margin: 0 auto;
-	border: 7px solid $dark-color;
-	background: white;
-	border-radius: 50%;
+	display: none;
+
+	@media (min-width: 730px) {
+		clear: both;
+		display: block;
+		position: relative;
+		top: 35px;
+		margin: 0 auto;
+		width: 25px;
+		height: 25px;
+		border: 7px solid $dark-color;
+		background: $link-color;
+		border-radius: 50%;
+	}
 }
 
 .event {
-	float: left;
 	position: relative;
-	width: 47%;
+	margin-top: $gutter;
 	padding: $gutter;
 	border-radius: 4px;
 	background: $link-color;
 	color: white;
+	@include box-shadow(0px 3px 0px darken($link-color,10));
+	@include animation(fadeUp .5s ease-out);
 
-	&.right {
-		float: right;
+	@media (min-width: 730px) {
+		float: left;
+		width: 47%;
+		margin-top: 0;
+
+		&.right {
+				float: right;
+		}
+	}
+
+	.event-title {
+		margin: 0 0 .25em 0;
+	}
+
+	.event-date {
+		display: inline-block;
+		margin-bottom: .25em;
+		color: darken($link-color,20);
+	}
+
+	p {
+		margin: 0;
+	}
+
+	a:link, a:visited {
+		color: white;
 	}
 }
