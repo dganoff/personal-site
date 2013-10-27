@@ -1,0 +1,53 @@
+.timeline {
+	position: relative;
+	overflow: hidden;
+
+	&:after {
+		position: absolute;
+		content: "";
+		z-index: -1;
+		height: 100%;
+		width: 10px;
+		background: $dark-color;
+		left: 49.5%;
+		top: 0;
+		border-radius: 4px;
+	}
+}
+
+.year {
+	width: 50px;
+	padding: .25em;
+	margin: 0 auto;
+	border-radius: 4px;
+	background: $dark-color;
+	color: white;
+	text-align: center;
+	font-weight: 900;
+}
+
+.blip {
+	clear: both;
+	position: relative;
+	top: 35px;
+	width: 25px;
+	height: 25px;
+	margin: 0 auto;
+	border: 7px solid $dark-color;
+	background: white;
+	border-radius: 50%;
+}
+
+.event {
+	float: left;
+	position: relative;
+	width: 47%;
+	padding: $gutter;
+	border-radius: 4px;
+	background: $link-color;
+	color: white;
+
+	&.right {
+		float: right;
+	}
+}
