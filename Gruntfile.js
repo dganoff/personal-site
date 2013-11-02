@@ -8,6 +8,9 @@ module.exports = function(grunt) {
 		DIST = "./dist/",
 		SERVER_PORT = "7777";
 
+	// Load all Grund tasks via matchdep:
+	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -64,7 +67,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
-				tasks: ['clean', 'assemble']
+				tasks: ['clean', 'assemble', 'htmlhint']
 			},
 			images: {
 				files: [SRC + 'images/*'],
@@ -105,6 +108,23 @@ module.exports = function(grunt) {
 					'dist/blog/': [SRC + 'templates/blog/*.hbs']
 				}
 			}
+		},
+
+		htmlhint: {
+			build: {
+		        options: {
+		            'tag-pair': true,
+		            'tagname-lowercase': true,
+		            'attr-lowercase': true,
+		            'attr-value-double-quotes': true,
+		            'doctype-first': true,
+		            'spec-char-escape': true,
+		            'id-unique': true,
+		            'head-script-disabled': true,
+		            'style-disabled': true
+		        },
+		        src: [DIST + '**/*.html']
+		    }
 		},
 
 		copy: {
@@ -166,17 +186,17 @@ module.exports = function(grunt) {
 	});
 
 	// Load Tasks:
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	// grunt.loadNpmTasks('grunt-contrib-uglify');
+	// grunt.loadNpmTasks('grunt-contrib-connect');
+	// grunt.loadNpmTasks('grunt-contrib-watch');
+	// grunt.loadNpmTasks('grunt-contrib-jshint');
+	// grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('assemble');
-	grunt.loadNpmTasks('grunt-newer');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-gh-pages');
-	grunt.loadNpmTasks('grunt-contrib-clean');
+	// grunt.loadNpmTasks('grunt-newer');
+	// grunt.loadNpmTasks('grunt-contrib-copy');
+	// grunt.loadNpmTasks('grunt-contrib-concat');
+	// grunt.loadNpmTasks('grunt-gh-pages');
+	// grunt.loadNpmTasks('grunt-contrib-clean');
 
 	// Register Tasks:
 	grunt.registerTask('default', ['assemble']);
