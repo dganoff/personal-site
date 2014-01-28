@@ -175,7 +175,7 @@ module.exports = function(grunt) {
 
 		concat: {
 			options: {
-				separator: ';'
+				separator: ';\n'
 			},
 			dist: {
 				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/vendor/prism.min.js', SRC + 'js/output/app.min.js'],
