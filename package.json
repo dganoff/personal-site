@@ -4,7 +4,6 @@
   "repository": "dganoff/personal-site",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-cli": "~0.1.9",
     "bower": "*",
     "grunt-contrib-uglify": "~0.2.4",
     "grunt-contrib-connect": "~0.5.0",
