@@ -51,27 +51,39 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			options: {
-				livereload: true
-			},
+			// options: {
+			// 	livereload: true
+			// },
 			scss: {
 				files: [SRC + 'scss/**/*.scss'],
 				tasks: 'sass'
 			},
 			css: {
-			    files: DIST + 'css/*.css'
+			    files: DIST + 'css/*.css',
+			    options: {
+					livereload: true
+				}
 			},
 			scripts: {
 				files: [SRC + 'js/*.js'],
-				tasks: ['uglify', 'concat', 'copy:javascript']
+				tasks: ['uglify', 'concat', 'copy:javascript'],
+			    options: {
+					livereload: true
+				}
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
-				tasks: ['clean', 'assemble', 'htmlhint']
+				tasks: ['clean', 'assemble', 'htmlhint'],
+			    options: {
+					livereload: true
+				}
 			},
 			images: {
 				files: [SRC + 'images/*'],
-				tasks: ['copy']
+				tasks: ['copy:images'],
+			    options: {
+					livereload: true
+				}
 			}
 		},
 
