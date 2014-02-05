@@ -13,23 +13,23 @@ module.exports = function(grunt) {
 
 		uglify: {
 			options: {
-		    	banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
-		    },
+				banner: '/*! <%= pkg.name %> ver. <%= pkg.version %> <%= grunt.template.today("mm-dd-yyyy") %> */\n'
+			},
 			dist: {
 				files: {
 					'src/js/output/app.min.js': [SRC + 'js/*.js']
 				}
-		    }
+			}
 		},
 
 		sass: {
 			dist: {
 				files: [{
 					src : ['**/*.scss', '!**/_*.scss'],
-		            cwd : 'src/scss',
-		            dest : 'dist/css',
-		            ext : '.css',
-		            expand : true
+					cwd : 'src/scss',
+					dest : 'dist/css',
+					ext : '.css',
+					expand : true
 				}],
 				options: {
 					style: 'compressed'
@@ -56,29 +56,29 @@ module.exports = function(grunt) {
 				tasks: 'sass'
 			},
 			css: {
-			    files: DIST + 'css/*.css',
-			    options: {
+				files: DIST + 'css/*.css',
+				options: {
 					livereload: true
 				}
 			},
 			scripts: {
 				files: [SRC + 'js/*.js'],
 				tasks: ['uglify', 'concat', 'copy:javascript'],
-			    options: {
+				options: {
 					livereload: true
 				}
 			},
 			html: {
 				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
 				tasks: ['clean', 'assemble', 'htmlhint'],
-			    options: {
+				options: {
 					livereload: true
 				}
 			},
 			images: {
 				files: [SRC + 'images/*'],
 				tasks: ['copy:images'],
-			    options: {
+				options: {
 					livereload: true
 				}
 			}
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 			options: {
 				flatten: true,
 				// assets: "path/to/assets",
-        		layoutdir: SRC + 'templates/layouts',
+				layoutdir: SRC + 'templates/layouts',
 				layout: 'layout.hbs',
 				data: [SRC + "data/*.{json, yml}"],
 				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs'],
@@ -104,8 +104,8 @@ module.exports = function(grunt) {
 			},
 			pages: {
 				files: {
-		        	dist: [SRC + 'templates/pages/*.hbs']
-		        }
+					dist: [SRC + 'templates/pages/*.hbs']
+				}
 			},
 			blog: {
 				// options: {
@@ -121,19 +121,19 @@ module.exports = function(grunt) {
 
 		htmlhint: {
 			build: {
-		        options: {
-		            'tag-pair': true,
-		            'tagname-lowercase': true,
-		            'attr-lowercase': true,
-		            'attr-value-double-quotes': true,
-		            'doctype-first': true,
-		            'spec-char-escape': true,
-		            'id-unique': true,
-		            'head-script-disabled': true,
-		            'style-disabled': true
-		        },
-		        src: [DIST + '**/*.html']
-		    }
+				options: {
+					'tag-pair': true,
+					'tagname-lowercase': true,
+					'attr-lowercase': true,
+					'attr-value-double-quotes': true,
+					'doctype-first': true,
+					'spec-char-escape': true,
+					'id-unique': true,
+					'head-script-disabled': true,
+					'style-disabled': true
+				},
+				src: [DIST + '**/*.html']
+			}
 		},
 
 		copy: {
