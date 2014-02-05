@@ -1,6 +1,38 @@
----
-title: Work
----
+<!doctype html>
+<!--[if lt IE 7]>      <html lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>About / DemetriDesign</title>
+
+	<link rel="icon" href="/favicon.png">
+
+	<meta name="author" content="Demetri Ganoff, @dganoff" />
+	<meta name="description" content="Personal website for Demetri Ganoff" />
+	<meta name="keywords" content="Front-end Developer, Web Designer, JavaScript, CSS, HTML, SASS, SCSS, NodeJS, GruntJS" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/screen.css">
+</head>
+<body>
+	<header role="banner" class="header">
+	<div class="row"><a href="/" class="logo"></a>
+		<nav role="navigation" class="main-nav">
+	<a href="" class="nav-toggle" id="mobile-toggle"><i class="icon-reorder"></i></a>
+
+	<ul id="main-nav">
+		<li><a href="/" ><i class="icon-home"></i> Home</a></li>
+		<li><a href="/blog" ><i class="icon-pencil"></i> Blog</a></li>
+		<li><a href="/about.html" ><i class="icon-user"></i> About</a></li>
+	</ul>
+</nav></div>
+</header>
+
+	
 <div class="row">
 	<div class="grid-12 columns">
 		<div class="row">
@@ -101,3 +133,32 @@ title: Work
 		</section>
 	</div>
 </div>
+
+	<footer role="contentinfo">
+	<section class="text-center">
+		Hand crafted by Demetri Ganoff.
+	</section>
+	<nav class="footer-nav">
+		<a title="@dganoff" href="http://www.twitter.com/dganoff"><i class="icon-twitter"></i></a>
+		<a title="GitHub.com/dganoff" href="http://github.com/dganoff"><i class="icon-github"></i></a>
+		<a title="CodePen.io/dganoff" href="http://codepen.io/dganoff"><i class="icon-codepen-white"></i></a>
+		<a title="LinkedIn" href="http://www.linkedin.com/pub/demetri-ganoff/2b/97a/a58"><i class="icon-linkedin"></i></a>
+	</nav>
+</footer>
+
+	<script src="/js/app.min.js"></script>
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-28553110-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+</body>
+</html>
