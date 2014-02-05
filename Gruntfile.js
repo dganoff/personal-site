@@ -8,9 +8,6 @@ module.exports = function(grunt) {
 		DIST = "./dist/",
 		SERVER_PORT = "7777";
 
-	// Load all Grund tasks via matchdep:
-	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -198,20 +195,12 @@ module.exports = function(grunt) {
 	});
 
 	// Load Tasks:
-	// grunt.loadNpmTasks('grunt-contrib-uglify');
-	// grunt.loadNpmTasks('grunt-contrib-connect');
-	// grunt.loadNpmTasks('grunt-contrib-watch');
-	// grunt.loadNpmTasks('grunt-contrib-jshint');
-	// grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('assemble');
-	// grunt.loadNpmTasks('grunt-newer');
-	// grunt.loadNpmTasks('grunt-contrib-copy');
-	// grunt.loadNpmTasks('grunt-contrib-concat');
-	// grunt.loadNpmTasks('grunt-gh-pages');
-	// grunt.loadNpmTasks('grunt-contrib-clean');
+	// Load all Grunt tasks via matchdep:
+	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
 	// Register Tasks:
-	grunt.registerTask('default', ['assemble']);
+	grunt.registerTask('default', ['connect', 'watch']);
 	grunt.registerTask('dev', ['connect', 'watch']);
 	grunt.registerTask('pages', ['gh-pages']);
 };
