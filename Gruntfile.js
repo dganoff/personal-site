@@ -201,6 +201,5 @@ module.exports = function(grunt) {
 
 	// Register Tasks:
 	grunt.registerTask('default', ['connect', 'watch']);
-	grunt.registerTask('dev', ['connect', 'watch']);
 	grunt.registerTask('pages', ['gh-pages']);
 };
