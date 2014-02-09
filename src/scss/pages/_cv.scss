@@ -1,0 +1,84 @@
+@mixin cv-section($color) {
+	.cv-sect-title {
+		color: $color;
+	}
+
+	[class^="icon-"] {
+		color: $color;
+	}
+}
+
+.cv-name {
+	font-size: 3em;
+}
+
+.cv-sect-title {
+	text-transform: uppercase;
+}
+
+.skills {
+	@include cv-section(#2AB69D);
+}
+
+.projects {
+	@include cv-section(#E65848);
+}
+
+.employment {
+	@include cv-section(#EDC433);
+}
+
+.education {
+	@include cv-section(#89588F);
+}
+
+.web-presence {
+	@include cv-section(#00b4cc);
+}
+
+.cv-dates {
+	margin: 0;
+	font-size: .85em;
+	text-transform: uppercase;
+	color: #aaa;
+}
+
+.job {
+	padding-bottom: .5em;
+	margin-bottom: 1em;
+
+	.job-company {
+		margin: 0;
+	}
+}
+
+.cv-degree, .cv-school {
+	margin: 0;
+}
+
+.web-presence-list {
+	list-style: none;
+
+	a {
+		display: inline-block;
+		padding: .25em 0;
+		text-decoration: none;
+		font-size: 1.5em;
+
+		&:link, &:visited {
+			color: black;
+		}
+
+		&:hover, &:active {
+			opacity: 0.7;
+		}
+
+		.icon-codepen-black {
+			position: relative;
+			top: 3px;
+			display: inline-block;
+			width: 23px;
+			height: 23px;
+		}
+	}
+}

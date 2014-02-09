@@ -28,11 +28,14 @@
 		"global/grid",
 		"global/typography",
 		"global/layout",
-		"global/icons";
+		"global/icons",
+		"global/buttons",
+		"global/font-awesome-overwrites";
 
 @import "parts/header",
 		"parts/footer";
 
 @import "pages/homepage",
 		"pages/blog",
+		"pages/cv",
 		"pages/about";
