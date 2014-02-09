@@ -69,7 +69,7 @@ module.exports = function(grunt) {
 				}
 			},
 			html: {
-				files: [SRC + 'templates/**/*.hbs', SRC + 'data/*.{json, yml}'],
+				files: [SRC + 'templates/**/*.html', SRC + 'data/*.{json, yml}'],
 				tasks: ['clean', 'assemble', 'htmlhint'],
 				options: {
 					livereload: true
@@ -95,16 +95,16 @@ module.exports = function(grunt) {
 				flatten: true,
 				// assets: "path/to/assets",
 				layoutdir: SRC + 'templates/layouts',
-				layout: 'layout.hbs',
+				layout: 'layout.html',
 				data: [SRC + "data/*.{json, yml}"],
-				partials: ['src/templates/pages/*.hbs', 'src/templates/parts/*.hbs'],
+				partials: ['src/templates/pages/*.html', 'src/templates/parts/*.html'],
 				ext: '.html',
 				theme: THEME,
 				plugins: [ 'assemble-related-pages', 'permalinks' ]
 			},
 			pages: {
 				files: {
-					dist: [SRC + 'templates/pages/*.hbs']
+					dist: [SRC + 'templates/pages/*.html']
 				}
 			},
 			blog: {
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
 				// 	}
 				// },
 				files: {
-					'dist/blog/': [SRC + 'templates/blog/*.hbs']
+					'dist/blog/': [SRC + 'templates/blog/*.html']
 				}
 			}
 		},
