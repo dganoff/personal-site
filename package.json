@@ -20,7 +20,8 @@
     "assemble-related-pages": "0.0.4",
     "permalinks": "~0.1.8",
     "grunt-htmlhint": "~0.4.0",
-    "matchdep": "~0.3.0"
+    "matchdep": "~0.3.0",
+    "time-grunt": "~0.2.9"
   },
   "engines": {
     "node": ">=0.10"

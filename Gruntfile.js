@@ -2,6 +2,9 @@ module.exports = function(grunt) {
 
 	"use strict";
 
+	// Display the execution time when tasks are run:
+	require('time-grunt')(grunt);
+
 	// Configuration:
 	var THEME = "DemetriDesign",
 		SRC = "./src/",
@@ -17,7 +20,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'src/js/output/app.min.js': [SRC + 'js/*.js']
+					'.tmp/app.min.js': [SRC + 'js/*.js']
 				}
 			}
 		},
@@ -70,7 +73,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [SRC + 'templates/**/*.html', SRC + 'data/*.{json, yml}'],
-				tasks: ['clean', 'assemble', 'htmlhint'],
+				tasks: ['newer:assemble', 'htmlhint'],
 				options: {
 					livereload: true
 				}
@@ -175,7 +178,7 @@ module.exports = function(grunt) {
 				separator: ';\n'
 			},
 			dist: {
-				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/vendor/prism.min.js', SRC + 'js/output/app.min.js'],
+				src: [SRC + 'bower-components/jquery/jquery.min.js', SRC + 'js/vendor/prism.min.js', '.tmp/app.min.js'],
 				dest: DIST + 'js/app.min.js'
 			}
 		},
@@ -201,5 +204,6 @@ module.exports = function(grunt) {
 
 	// Register Tasks:
 	grunt.registerTask('default', ['connect', 'watch']);
+	grunt.registerTask('build', ['newer:sass', 'clean', 'assemble', 'htmlhint', 'concat', 'copy', 'jshint', 'uglify']);
 	grunt.registerTask('pages', ['gh-pages']);
 };
