@@ -14,8 +14,9 @@ body {
 	background: $background-color;
 }
 
-::selection {
-	background: $dark-color;
+-moz-::selection, -webkit-::selection, ::selection {
+	background: $primary-color;
+	opacity: 0.1;
 	color: white;
 }
 
