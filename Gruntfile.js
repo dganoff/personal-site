@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [SRC + 'templates/**/*.html', SRC + 'data/*.{json, yml}'],
-				tasks: ['newer:assemble', 'htmlhint'],
+				tasks: ['assemble', 'htmlhint'],
 				options: {
 					livereload: true
 				}
