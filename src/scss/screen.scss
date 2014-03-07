@@ -33,9 +33,11 @@
 		"global/font-awesome-overwrites";
 
 @import "parts/header",
+		"parts/codepens",
 		"parts/footer";
 
 @import "pages/homepage",
 		"pages/blog",
 		"pages/cv",
+		"pages/playground",
 		"pages/about";
