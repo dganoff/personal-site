@@ -1,15 +1,25 @@
 .button {
 	display: inline-block;
 	padding: .5em .75em;
-	background: $primary-color;
+	background-color: $primary-color;
 	font-weight: bold;
 	text-decoration: none;
 	@include border-radius(3px);
-	@include transition(all .2s ease-in);
+	@include transition(all .1s ease-in);
 	
 	&:link, &:visited {color: white;}
 
 	&:hover {
 		background: darken($primary-color,5);
+	}
+
+	&:active {
+		background-color: darken($primary-color,15);
+	}
+
+	.icon {
+		padding-right: 0.5em;
+		margin-right: 0.5em;
+		border-right: 1px solid rgba(black,0.15);
 	}
 }
