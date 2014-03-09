@@ -60,6 +60,7 @@
 			padding: 1em;
 			text-decoration: none;
 			color: white;
+			font-weight: bold;
 
 			&.active, &.active:hover {
 				background: rgba($link-color, 0.5);
