@@ -1,0 +1,7 @@
+.tip {
+	@include tip();
+}
+
+.tip-primary {
+	@include tip($primary-color);
+}

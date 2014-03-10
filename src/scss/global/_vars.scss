@@ -13,3 +13,32 @@ $primary-color: #00B4CC;
 $background-color: white;
 $link-color: #00B4CC;
 $dark-color: #343838;
+
+// Mixins:
+@mixin tip($color: #333333) {
+	position: absolute;
+	display: none;
+	top: -2.5em;
+	padding: .5em .75em;
+	background-color: $color;
+	border-radius: 3px;
+	font-size: 0.75em;
+	color: #eee;
+	
+	@include animation(springUp .5s cubic-bezier(0.75, -0.25, 0.25, 1.95));
+
+	&:after {
+		position: absolute;
+		content: "";
+		top: 100%;
+		left: 20%;
+		border-top: 5px solid $color;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 5px solid transparent;
+	}
+	
+	:hover > & {
+		display: block;
+	}
+}
