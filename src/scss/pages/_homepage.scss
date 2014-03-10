@@ -51,13 +51,13 @@
 	font-weight: 400;
 	
 	&:link, &:visited {
-		color: white;
+		color: darken($link-color, 20);
 	}
 
 	// @include transition(all .3s ease-in);
 
 	&:hover, &:active {
-		background: rgba(white,.25);
+		color: white;
 
 		i[class^="icon-"] {
 			@include animation(happy .5s $ease-in-out-back infinite alternate);
