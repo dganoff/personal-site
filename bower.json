@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "bourbon": "~3.1.8",
-    "font-awesome": "~3.2.1",
+    "font-awesome": "~4.0.3",
     "jquery": "~2.0.3"
   },
   "devDependencies": {}

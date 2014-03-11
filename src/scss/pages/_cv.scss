@@ -3,7 +3,11 @@
 		color: $color;
 	}
 
-	[class^="icon-"] {
+	h3 {
+		color: $color;
+	}
+
+	[class*="fa-"] {
 		color: $color;
 	}
 }

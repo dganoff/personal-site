@@ -89,7 +89,7 @@ module.exports = function(grunt) {
 
 		jshint: {
 			files: {
-				src: ['src/js/*.js', 'dist/js/*.js']
+				src: ['src/js/*.js']
 			}
 		},
 
@@ -164,9 +164,9 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						src: [SRC + 'bower-components/font-awesome/font/*'],
+						src: [SRC + 'bower-components/font-awesome/fonts/*'],
 						flatten: true,
-						dest: DIST + 'font'
+						dest: DIST + 'fonts'
 					}
 				]
 			}
@@ -205,5 +205,5 @@ module.exports = function(grunt) {
 	// Register Tasks:
 	grunt.registerTask('default', ['connect', 'watch']);
 	grunt.registerTask('build', ['newer:sass', 'clean', 'assemble', 'htmlhint', 'concat', 'copy', 'jshint', 'uglify']);
-	grunt.registerTask('pages', ['gh-pages']);
+	grunt.registerTask('pages', ['build', 'gh-pages']);
 };
