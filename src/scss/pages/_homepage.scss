@@ -63,12 +63,12 @@
 	&:hover, &:active {
 		color: white;
 
-		i[class^="icon-"] {
+		i[class*="fa-"], i[class*="icon-"] {
 			@include animation(happy .5s $ease-in-out-back infinite alternate);
 		}
 	}
 
-	i[class^="icon-"] {
+	i[class*="fa-"], i[class*="icon-"] {
 		display: block;
 		font-size: 3em;
 		color: darken($link-color, 20);
