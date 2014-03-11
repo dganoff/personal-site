@@ -1,6 +1,7 @@
 body {
 	font-family: 'Lato', Helvetica, Arial, sans-serif;
-	font-weight: 300;
+	font-weight: 400;
+	color: #454545;
 }
 
 // Formatting:
@@ -22,6 +23,7 @@ a {
 // Copy:
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 900; // based on the Lato Google Font
+	color: black;
 
 	small {
 		display: block;
@@ -34,8 +36,8 @@ h1, h2, h3, h4, h5, h6 {
 article {
 	p, ul, ol, blockquote {
 		line-height: 1.45em;
-		color: #454545;
 		margin: 0 0 1em 0;
+		font-weight: 400;
 	}
 	
 	p {
@@ -49,5 +51,6 @@ article {
 
 .lead {
 	font-size: 1.15em;
-	font-weight: 400;
+	font-weight: 700;
+	color: black;
 }
