@@ -88,3 +88,11 @@
 		a {font-size: 16px;}
 	}
 }
+
+.columns-2 {
+	@include columns(1);
+
+	@media (min-width: $small-screen) {
+		@include columns(2 1em);
+	}
+}
