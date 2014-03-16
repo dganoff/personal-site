@@ -12,11 +12,16 @@
 
 	&:hover {
 		background: #eee;
+		
+		&:after {
+			@include animation(bounceRight ease 0.5s infinite alternate);
+			color: black;	
+		}
 	}
 
 	&:active {
 		background: $link-color;
-		color: white;
+		* {color: white;}
 	}
 
 	&:after {

@@ -80,3 +80,16 @@
 		opacity: .6;
 	}
 }
+
+.home-cta {
+	@include button($dark-color);
+	width: 100%;
+	margin-top: 0.5em;
+
+	@media (min-width: $small-screen) {
+		width: auto;
+		margin-top: auto;
+		@include transform( translateY(80%) );
+		z-index: 999;
+	}
+}

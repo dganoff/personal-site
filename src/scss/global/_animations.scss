@@ -47,3 +47,12 @@
     opacity: 1;
   }
 }
+
+@include keyframes(bounceRight) {
+  0% {
+    @include transform( translateX(0) );
+  }
+  100% {
+    @include transform( translateX(5px) );
+  }
+}
