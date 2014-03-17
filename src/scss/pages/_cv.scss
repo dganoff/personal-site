@@ -1,6 +1,9 @@
-@mixin cv-section($color) {
+@mixin cv-section($color: black) {
+	line-height: 1.45em;
+
 	.cv-sect-title {
 		color: $color;
+		text-transform: uppercase;
 	}
 
 	h3 {
@@ -13,11 +16,17 @@
 }
 
 .cv-name {
+	margin-top: 0;
 	font-size: 3em;
 }
 
-.cv-sect-title {
-	text-transform: uppercase;
+.intro {
+	@include cv-section;
+	text-align: center;
+
+	@media (min-width: $small-screen) {
+		text-align: left;
+	}
 }
 
 .skills {
@@ -38,6 +47,14 @@
 
 .web-presence {
 	@include cv-section(#00b4cc);
+}
+
+.project {
+	padding-bottom: 1em;
+}
+
+.project-title {
+	margin: 0;
 }
 
 .cv-dates {
