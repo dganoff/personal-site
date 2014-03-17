@@ -150,16 +150,6 @@ module.exports = function(grunt) {
 					}
 				]
 			},
-			images: {
-				files: [
-					{
-						expand: true,
-						src: [SRC + 'images/*'],
-						flatten: true,
-						dest: DIST + 'img'
-					}
-				]
-			},
 			fonts: {
 				files: [
 					{
@@ -170,7 +160,17 @@ module.exports = function(grunt) {
 					}
 				]
 			}
+		},
 
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: SRC + 'images',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: DIST + 'img'
+				}]
+			}
 		},
 
 		concat: {
@@ -204,6 +204,6 @@ module.exports = function(grunt) {
 
 	// Register Tasks:
 	grunt.registerTask('default', ['connect', 'watch']);
-	grunt.registerTask('build', ['newer:sass', 'clean', 'assemble', 'htmlhint', 'concat', 'newer:copy', 'jshint', 'uglify']);
+	grunt.registerTask('build', ['newer:sass', 'clean', 'assemble', 'htmlhint', 'concat', 'newer:copy', 'newer:imagemin', 'jshint', 'uglify']);
 	grunt.registerTask('pages', ['build', 'gh-pages']);
 };
