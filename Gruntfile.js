@@ -72,7 +72,10 @@ module.exports = function(grunt) {
 				}
 			},
 			html: {
-				files: [SRC + 'templates/**/*.html', SRC + 'data/*.{json, yml}'],
+				files: [
+					SRC + 'templates/**/*.html',
+					SRC + 'data/*.{json, yml}'
+				],
 				tasks: ['assemble', 'htmlhint'],
 				options: {
 					livereload: true
