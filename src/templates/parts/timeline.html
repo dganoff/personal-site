@@ -1,70 +1,12 @@
 <section class="timeline">
 
-	<div class="year">2014</div>
-	<div class="blip"></div>
-	<div class="event">
-		<h3 class="event-title">Launched First Public App</h3>
-		<time class="event-date">January 15, 2014</time>
-		<p>Launched the official HD Supply White Cap <a href="https://itunes.apple.com/us/app/white-cap/id781569445?ls=1&mt=8">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.hdsupply.whitecapapp&hl=en">Android</a> app in their respective app stores. Used Appcelerator platform to develop this cross-platform app with the mobile team at HD Supply.</p>
-	</div>
-
-	<div class="year">2013</div>
-	<div class="blip"></div>
-	<div class="event right">
-		<h3 class="event-title">Rebuilt DemetriDesign.com</h3>
-		<time class="event-date">October 21, 2013</time>
-		<p>Completely rebuilt my personal site so I could learn some new tricks and put them to practical use. Check out my blog post about it <a href="/blog/starting-from-scratch.html">here</a>.</p>
-	</div>
-	<div class="blip"></div>
-	<div class="event">
-		<h3 class="event-title">Redesigned <a href="http://www.brockandscott.com">Brock & Scott Law Firm Website</a></h3>
-		<time class="event-date">July, 2013</time>
-		<p>Worked with committee of Law Firm Partners to completely redesign and develop their website. Used responsive web design, interactive SVG and icon fonts for retina support.</p>
-	</div>
-
-	<div class="year">2012</div>
-	<div class="blip"></div>
-	<div class="event right">
-		<h3 class="event-title">Moved to North Carolina</h3>
-		<time class="event-date">July, 2012</time>
-		<p>Moved from Orlando, FL to Winston-Salem, NC. Working remotely full-time.</p>
-	</div>
-	<div class="blip"></div>
-	<div class="event">
-		<h3 class="event-title">Launched DemetriDesign.com</h3>
-		<time class="event-date">January, 2012</time>
-		<p>Originally created as a WordPress theme. Fully responsive with CSS3 animations.</p>
-	</div>
-
-	<div class="year">2011</div>
-	<div class="blip"></div>
-	<div class="event right">
-		<h3 class="event-title">Attended Future of Web Design NYC Conference</h3>
-		<time class="event-date">October, 2011</time>
-		<p>Participated in SASS workshop following the conference.</p>
-	</div>
-
-	<div class="blip"></div>
-	<div class="event">
-		<h3 class="event-title">Launched <a href="http://hdsupply.com/locations">HD Supply Location Finder</a></h3>
-		<time class="event-date">August, 2011</time>
-		<p>My first responsive web design project. Designed and developed a branch location finder web app for all screen sizes.</p>
-	</div>
-
-	<div class="year">2008</div>
-	<div class="blip"></div>
-	<div class="event right">
-		<h3 class="event-title">Graduated from University of Central Florida</h3>
-		<time class="event-date">December, 2008</time>
-		<p>Bachelor of Arts in Digital Media</p>
-	</div>
-
-	<div class="year">2007</div>
-	<div class="blip"></div>
-	<div class="event">
-		<h3 class="event-title">Started working at HD Supply</h3>
-		<time class="event-date">June 27, 2007</time>
-		<p>First IT intern at the Orlando Corporate office.</p>
-	</div>
+	{{#each timeline}}
+		<div class="year-marker">{{this.year}}</div>
+		<section class="year">
+			{{#each this.events}}
+				{{> timeline-event this}}
+			{{/each}}
+		</section>
+	{{/each}}
 
 </section>

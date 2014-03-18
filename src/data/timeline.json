@@ -1,0 +1,77 @@
+{
+	"year2014": {
+		"year": 2014,
+		"events": [
+			{
+				"title": "Launched First Public App",
+				"date": "January 15, 2014",
+				"description": "Launched the official HD Supply White Cap <a href=\"https://itunes.apple.com/us/app/white-cap/id781569445?ls=1&mt=8\">iOS</a> and <a href=\"https://play.google.com/store/apps/details?id=com.hdsupply.whitecapapp&hl=en\">Android</a> app in their respective app stores. Used Appcelerator platform to develop this cross-platform app with the mobile team at HD Supply."
+			}
+		]
+	},
+	"year2013": {
+		"year": 2013,
+		"events": [
+			{
+				"title": "Rebuilt DemetriDesign.com",
+				"date": "October 21, 2013",
+				"description": "Completely rebuilt my personal site so I could learn some new tricks and put them to practical use. Check out my blog post about it <a href=\"/blog/starting-from-scratch.html\">here</a>."
+			},
+			{
+				"title": "Redesigned <a href=\"http://www.brockandscott.com\">Brock & Scott Law Firm Website</a>",
+				"date": "July, 2013",
+				"description": "Worked with committee of Law Firm Partners to completely redesign and develop their website. Used responsive web design, interactive SVG and icon fonts for retina support."
+			}
+		]
+	},
+	"year2012": {
+		"year": 2012,
+		"events": [
+			{
+				"title": "Moved to North Carolina",
+				"date": "July, 2012",
+				"description": "Moved from Orlando, FL to Winston-Salem, NC. Working remotely full-time."
+			},
+			{
+				"title": "Launched DemetriDesign.com",
+				"date": "January, 2012",
+				"description": "Originally created as a WordPress theme. Fully responsive with CSS3 animations."
+			}
+		]
+	},
+	"year2011": {
+		"year": 2011,
+		"events": [
+			{
+				"title": "Attended Future of Web Design NYC Conference",
+				"date": "October, 2011",
+				"description": "Participated in SASS workshop following the conference."
+			},
+			{
+				"title": "Launched <a href=\"http://hdsupply.com/locations\">HD Supply Location Finder</a>",
+				"date": "August, 2011",
+				"description": "My first responsive web design project. Designed and developed a branch location finder web app for all screen sizes."
+			}
+		]
+	},
+	"year2008": {
+		"year": 2008,
+		"events": [
+			{
+				"title": "Graduated from University of Central Florida",
+				"date": "December, 2008",
+				"description": "Bachelor of Arts in Digital Media"
+			}
+		]
+	},
+	"year2007": {
+		"year": 2007,
+		"events": [
+			{
+				"title": "Started working at HD Supply",
+				"date": "June 27, 2007",
+				"description": "First IT intern at the Orlando Corporate office."
+			}
+		]
+	}
+}
