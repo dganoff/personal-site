@@ -1,0 +1,238 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Assemble, The Final Piece of the Puzzle / DemetriDesign</title>
+
+	<link rel="icon" href="/favicon.png">
+
+	<meta name="author" content="Demetri Ganoff, @dganoff" />
+	<meta name="description" content="Personal website for Demetri Ganoff" />
+	<meta name="keywords" content="Front-end Developer, Web Designer, JavaScript, CSS, HTML, SASS, SCSS, NodeJS, GruntJS,Grunt JS,Node JS,Assemble,Front-end tooling" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/screen.css">
+</head>
+<body>
+	<header role="banner" class="header">
+	<div class="row"><a href="/" class="logo"></a>
+		<nav role="navigation" class="main-nav">
+	<a href="" class="nav-toggle" id="mobile-toggle"><i class="fa fa-reorder"></i></a>
+
+	<ul id="main-nav">
+		<li><a href="/" ><i class="fa fa-home"></i> Home</a></li>
+		<li><a href="/blog"  class="active"><i class="fa fa-pencil"></i> Blog</a></li>
+		<li><a href="/about.html" ><i class="fa fa-user"></i> About</a></li>
+	</ul>
+</nav></div>
+</header>
+
+	
+<div class="row">
+	<div class="grid-12 columns">
+		<a href="/blog" class="blog-back" title="Back to Blog Posts">Blog</a>
+
+		<section role="main">
+			<article class="article-body">
+				
+<section class="article-heading">
+	<h1>Assemble, The Final Piece of the Puzzle</h1>
+	<h2 class="subtitle">3/18/2014</h2>
+</section>
+
+<p class="lead">
+	Assemble has changed the way I write HTML. Long forgotten are the days when we have to rely on server-side languages to write a well maintainable website. Includes, data-populated templates (and more) are now possible within the core skillset of a front-end developer; and it's never been easier!
+</p>
+
+<h3>TL;DR</h3>
+<p>For those lazy folks: </p>
+<ul>
+	<li>
+		<a href="http://assemble.io">Assemble</a> is awesome, go check out their <a href="http://assemble.io/docs/Home.html">documentation</a> to learn it.
+	</li>
+	<li>
+		You can create super simple website in minutes or create <a href="http://github.com/assemble/boilerplates">awesome stuff with it</a>
+	</li>
+	<li>
+		Demo (article topic): the <strong>timeline</strong> on <a href="/about.html">this page</a>
+	</li>
+	<li>
+		Zurb Foundation uses it for their <a href="http://github.com/zurb/foundation">documentation</a>; <br>
+		so does <a href="http://github.com/h5bp/Effeckt.css">Effeckt.css</a> and many others!
+	</li>
+</ul>
+
+<h3>Intro</h3>
+<p>
+	As with many front-end developers these days, I've "retooled" my development workflow with the likes of Grunt, Node, Bower, and SASS. For me, the final piece of the puzzle was Assemble. Thanks to Assemble, now I can ditch those other technologies I was forced to use to organize HTML pages (ASP/PHP/etc). Server-side includes are a thing of the past, as a front-end developer I can finally focus on only front-end languages!
+</p>
+<p>
+	Gradually, I've become more and more comfortable with using Assemble <strong>partials</strong> (aka includes) as a modular approach to writing HTML. Taking it one step further, Assemble allows me to add logic and data context to partials. This is an extremely powerful feature and Assemble makes it really easy to accomplish (with help from the <a href="http://handlebarsjs.com/">Handlebars</a> engine).
+</p>
+<p>
+	Today I'll demonstrate how I refactored part of my site to use the logic and data-driven partials in Assemble. The <a href="/about.html">About page</a> has a <strong>timeline</strong> with repeating events, each event having the same HTML markup. This was a perfect candidate for Assemble's more powerful features. 
+</p>
+
+<h3>The Timeline</h3>
+<p>Here's how the timeline HTML markup originally looked:</p>
+<pre>
+<code class="language-markup">&lt;section class=&quot;timeline&quot;&gt;
+		&lt;div class=&quot;year-marker&quot;&gt;Year 1&lt;/div&gt;
+
+		&lt;section class=&quot;year&quot;&gt;
+			&lt;div class=&quot;blip&quot;&gt;&lt;/div&gt;
+			&lt;div class=&quot;event&quot;&gt;
+				&lt;h3 class=&quot;event-title&quot;&gt;Event 1&lt;/h3&gt;
+				&lt;time class=&quot;event-date&quot;&gt;...&lt;/time&gt;
+				&lt;p&gt;...&lt;/p&gt;
+			&lt;/div&gt;
+
+			&lt;div class=&quot;blip&quot;&gt;&lt;/div&gt;
+			&lt;div class=&quot;event&quot;&gt;
+				&lt;h3 class=&quot;event-title&quot;&gt;Event 2&lt;/h3&gt;
+				&lt;time class=&quot;event-date&quot;&gt;...&lt;/time&gt;
+				&lt;p&gt;...&lt;/p&gt;
+			&lt;/div&gt;
+			...
+		&lt;/section&gt;
+		...
+
+&lt;/section&gt;</code>
+</pre>
+<p>
+	Based on the above code, you can see how there is a repeating pattern of event markup within a year. This is also repeated for each year on the timeline. As any good programmer, I recognized an opportunity to write some re-usable code instead of repeating myself (<a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a> concept). DRY code is more maintainable since you only need to make a change once and it will affect all instances instead of manually changing everything.
+</p>
+
+<h3>Assemble to the Rescue!</h3>
+<p>
+	The first step in making this DRY was to extract the parts that were repeating and create a partial.
+</p>
+<p>
+	The new partial is named <a href="http://github.com/dganoff/personal-site/blob/master/src/data/timeline.json"><code>timeline-event.html</code></a>:
+</p>
+<pre>
+<code class="language-markup">&lt;div class=&quot;blip&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;event&quot;&gt;
+	&lt;h3 class=&quot;event-title&quot;&gt;{{{title}}}&lt;/h3&gt;
+	&lt;time class=&quot;event-date&quot;&gt;{{date}}&lt;/time&gt;
+	&lt;p&gt;{{{description}}}&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+<p>
+	Now, I just needed to use Assemble's implementation of Handlebars to repeat this partial for each event and fill in the content. Where would the content come from? Assemble allows you to inject content/data into your partials from a local <code>JSON</code> file. That's where those curly braces come in.
+</p>
+<p>
+	Here's part of that data file (<a href="http://github.com/dganoff/personal-site/blob/master/src/data/timeline.json"><code>timeline.json</code></a>): 
+</p>
+<pre>
+<code class="language-javascript">{
+	...
+	"year2011": {
+		"year": 2011,
+		"events": [
+			{
+				"title": "Attended Future of Web Design NYC Conference",
+				"date": "October, 2011",
+				"description": "Participated in SASS ..."
+			},
+			{
+				"title": "Launched ...",
+				"date": "August, 2011",
+				"description": "My first responsive ..."
+			}
+		]
+	},
+	...
+}</code>
+</pre>
+<p>
+	Using the built-in features of Handlebars, I can iterate over each "yearXXXX" item in the data file to generate my entire timeline.
+</p>
+<p>Let's take a look at how I iterated through the data file:</p>
+<pre>
+<code class="language-markup">&lt;section class=&quot;timeline&quot;&gt;
+
+	{{#each timeline}}
+		&lt;div class=&quot;year-marker&quot;&gt;{{this.year}}&lt;/div&gt;
+		&lt;section class=&quot;year&quot;&gt;
+			{{#each this.events}}
+				{{&gt; timeline-event this}}
+			{{/each}}
+		&lt;/section&gt;
+	{{/each}}
+
+&lt;/section&gt;</code>
+</pre>
+<p>
+	Using the handlebars helper <code>{{#each}}</code>, I iterated over all the items inside the <code>timeline</code> object ('timeline' name is inferred by the name of the .json file). Then, I print out the <code>year</code> property for the item before iterating over the <code>events</code> array.
+</p>
+<p>
+	Where I include the <code>timeline-event</code> partial, <code>{{&gt; timeline-event}}</code>, the <code>event</code> object is passed into it. This gives it context to use the properties title, date, and description.
+</p>
+
+<h3>Conclusion</h3>
+<p>
+	My timeline is now DRY! I have three files to update relating to the timeline:
+</p>
+<ol>
+	<li>
+		<a href="http://github.com/dganoff/personal-site/blob/master/src/templates/parts/timeline.html"><code>timeline.html</code></a> <br>
+		Where I create the timeline section and iterate over all the events.
+	</li>
+	<li>
+		<a href="http://github.com/dganoff/personal-site/blob/master/src/templates/parts/timeline-event.html"><code>timeline-event.html</code></a> <br>
+		Where the individual event markup exists.
+	</li>
+	<li>
+		<a href="http://github.com/dganoff/personal-site/blob/master/src/data/timeline.json"><code>timeline.json</code></a> <br>
+		Where the raw data/content is kept.
+	</li>
+</ol>
+<p>
+	This also separates concerns between data and markup/structure/style, which is always a good thing.
+</p>
+<p>
+	I should note that there's some setup involved to enable the data files to be used in your partials. Please check out the <a href="http://github.com/dganoff/personal-site/blob/master/Gruntfile.js#L99">assemble config part of my Gruntfile.js</a> to see how my data files and partials are configured.
+</p>
+			</article>
+		</section>
+	</div>
+</div>
+
+	<footer role="contentinfo">
+	<section class="text-center">
+		Hand crafted by Demetri Ganoff.
+	</section>
+	<nav class="footer-nav">
+		<a title="@dganoff" href="http://www.twitter.com/dganoff"><i class="fa fa-twitter"></i></a>
+		<a title="GitHub.com/dganoff" href="http://github.com/dganoff"><i class="fa fa-github"></i></a>
+		<a title="CodePen.io/dganoff" href="http://codepen.io/dganoff"><i class="fa icon-codepen-white"></i></a>
+		<a title="LinkedIn" href="http://www.linkedin.com/pub/demetri-ganoff/2b/97a/a58"><i class="fa fa-linkedin"></i></a>
+	</nav>
+	<p class="text-center">
+		Check out the source code for this site: <br>
+		<i class="fa fa-code"></i> <a href="https://github.com/dganoff/personal-site"> https://github.com/dganoff/personal-site</a>
+	</p>
+</footer>
+
+	<script src="/js/app.min.js"></script>
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-28553110-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+</body>
+</html>
