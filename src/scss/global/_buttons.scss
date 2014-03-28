@@ -18,10 +18,15 @@
 		background-color: darken($color,15);
 	}
 
+	&.expand {
+		width: 100%;
+	}
+
 	.icon {
 		padding-right: 0.5em;
 		margin-right: 0.5em;
 		border-right: 1px solid rgba(black,0.15);
+		font-size: 1.15em;
 	}
 }
 
