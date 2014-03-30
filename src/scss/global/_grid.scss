@@ -69,7 +69,6 @@
 	@include clearfix;
 
 	.tile-grid-item {
-		// float: left;
 		@include inline-block;
 		width: 50%;
 
@@ -85,8 +84,32 @@
 			width: percentage(1/8);
 		}
 
-		a {font-size: 16px;}
+		a:link, a:visited {
+			display: block;
+			padding: 0.25em;
+			border: 0.25em;
+			border: 1px solid transparent;
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: none;
+			
+			&:hover {
+				color: $dark-color;
+				border: 1px solid #eee;
+
+				[class*="fa-"] {
+					@include transform(scale(1.15));
+				}
+			}
+		}
+
+		[class*="fa-"] {
+			display: block;
+			font-size: 3em;
+		}
 	}
+
+	
 }
 
 .columns-2 {

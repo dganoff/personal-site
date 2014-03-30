@@ -60,7 +60,8 @@
 	// @include transition(all .3s ease-in);
 
 	&:hover, &:active {
-		color: white;
+		color: white !important;
+		border-color: transparent !important;
 
 		i[class*="fa-"], i[class*="icon-"] {
 			@include animation(happy .5s $ease-in-out-back infinite alternate);
