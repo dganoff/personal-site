@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: [SRC + 'js/*.js'],
-				tasks: ['uglify', 'concat', 'copy:javascript'],
+				tasks: ['uglify', 'concat', 'newer:copy:javascript'],
 				options: {
 					livereload: true
 				}
