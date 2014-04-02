@@ -48,6 +48,7 @@
 		padding: 0;
 		list-style: none;
 	}
+
 	li {
 		list-style: none;
 		float: left;
@@ -71,6 +72,15 @@
 				background: rgba(black, 0.2);
 				color: $link-color;
 			}
+		}
+	}
+
+	[class*=fa] {
+		font-size: 1em;
+
+		@media (min-width: $small-screen) {
+			font-size: 1.5em;
+			margin-right: 0.25em;
 		}
 	}
 }
