@@ -17,7 +17,11 @@
 
 .cv-name {
 	margin-top: 0;
-	font-size: 3em;
+	font-size: 2em;
+
+	@media (min-width: $small-screen) {
+		font-size: 3em;
+	}
 }
 
 .intro {
@@ -102,4 +106,36 @@
 			height: 23px;
 		}
 	}
+}
+
+.overview {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.years-exp {
+	text-align: center;
+
+	.num-years {
+		position:relative;
+		display: inline-block;
+		font-size: 4em;
+		font-weight: bold;
+		color: black;
+
+		.fa {
+			position: absolute;
+			top: 15px;
+			left: -1em;
+			font-size: 30%;
+			color: #ccc;
+		}
+	}
+}
+
+.exp-label {
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	font-weight: bold;
 }
