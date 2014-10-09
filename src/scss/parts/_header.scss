@@ -72,6 +72,10 @@
 				background: rgba(black, 0.2);
 				color: $link-color;
 			}
+
+			@media (min-width: $small-screen) {
+				padding: 0.8em 1em;
+			}
 		}
 	}
 
