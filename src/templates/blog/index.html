@@ -6,9 +6,9 @@ tags:
 ---
 <div class="row" role="main">
 	<div class="grid-12 columns">
-		<article>
+		<article class="blog-list">
 			{{#withSort page.related "data.date" dir="desc"}}
-				<a href="{{relative ../page.dest this.dest}}" class="blog-roll-item">
+				<a href="{{relative ../page.dest this.dest}}" class="blog-list-item">
 					<h2 class="blog-title">{{this.data.title}}</h2>
 					<h4 class="blog-subtitle">Published: {{this.data.date}}</h4>
 				</a>
