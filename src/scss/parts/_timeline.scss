@@ -64,7 +64,7 @@
 	border-radius: 4px;
 	background: $link-color;
 	color: white;
-	@include box-shadow(0px 3px 0px darken($link-color,10));
+	box-shadow: 0px 3px 0px darken($link-color,10);
 	@include animation(fadeUp .5s ease-out);
 
 	@media (min-width: 730px) {
