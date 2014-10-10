@@ -110,7 +110,7 @@ module.exports = function(grunt) {
 			},
 			pages: {
 				files: {
-					dist: [SRC + 'templates/pages/*.html']
+					'dist': [SRC + 'templates/pages/*.html']
 				}
 			},
 			blog: {
@@ -199,7 +199,13 @@ module.exports = function(grunt) {
 
 		clean: {
 			build: {
-				src: [DIST + "**/*.html"]
+				src: [
+					DIST + "**/*.html",
+					DIST + "fonts/*",
+					DIST + "img/*",
+					DIST + "css/*",
+					DIST + "js/*"
+				]
 			}
 		}
 	});
@@ -211,6 +217,6 @@ module.exports = function(grunt) {
 
 	// Register Tasks:
 	grunt.registerTask('default', ['connect', 'watch']);
-	grunt.registerTask('build', ['newer:sass', 'clean', 'assemble', 'htmlhint', 'newer:copy', 'jshint', 'newer:uglify', 'newer:concat']);
+	grunt.registerTask('build', ['clean', 'sass', 'assemble', 'htmlhint', 'copy', 'jshint', 'uglify', 'concat']);
 	grunt.registerTask('pages', ['build', 'gh-pages']);
 };
