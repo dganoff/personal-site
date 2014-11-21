@@ -3,6 +3,11 @@
 		"year": 2014,
 		"events": [
 			{
+				"title": "Started working at Intridea Inc.",
+				"date": "November, 2014",
+				"description": "Joined the UI Engineering team at Intridea to help them build awesome web applications with AngularJS and modern web technologies."
+			},
+			{
 				"title": "Moved back to Orlando, FL.",
 				"date": "June, 2014",
 				"description": "Moved back to Orlando, FL from North Carolina."
