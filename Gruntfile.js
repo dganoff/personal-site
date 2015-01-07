@@ -122,12 +122,12 @@ module.exports = function(grunt) {
 				files: {
 					'dist/blog/': [SRC + 'templates/blog/*.html']
 				}
-			},
-			work: {
-				files: {
-					'dist/work/': [SRC + 'templates/work/*.html']
-				}
 			}
+			// work: {
+			// 	files: {
+			// 		'dist/work/': [SRC + 'templates/work/*.html']
+			// 	}
+			// }
 		},
 
 		htmlhint: {
